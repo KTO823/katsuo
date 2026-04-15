@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>カツオ（卡戳 / KTO）｜個人網站</title>
+    <meta name="description" content="日系溫柔風的個人網站：作品、證照、觀影紀錄與收藏。" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="回到首頁">
+          <span class="mark">KTO</span>
+          <span>カツオ</span>
+        </a>
+
+        <nav class="nav" aria-label="主要導覽">
+          <a data-nav href="./index.html">首頁</a>
+          <a data-nav href="./pages/credentials.html">證照與技能</a>
+          <a data-nav href="./pages/portfolio.html">作品集</a>
+          <a data-nav href="./pages/watchlist.html">觀影紀錄</a>
+          <a data-nav href="./pages/collections.html">愛好收藏</a>
+          <a data-nav href="./pages/about.html">關於我</a>
+        </nav>
+
+        <button
+          class="menu-btn"
+          type="button"
+          aria-label="開啟選單"
+          aria-expanded="false"
+          data-menu-btn
+        >
+          <span class="menu-icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-panel" data-mobile-panel data-open="false" aria-label="手機選單">
+      <div class="container">
+        <nav class="mobile-nav" aria-label="主要導覽（手機）">
+          <a data-nav href="./index.html">首頁</a>
+          <a data-nav href="./pages/credentials.html">證照與技能</a>
+          <a data-nav href="./pages/portfolio.html">作品集</a>
+          <a data-nav href="./pages/watchlist.html">觀影紀錄</a>
+          <a data-nav href="./pages/collections.html">愛好收藏</a>
+          <a data-nav href="./pages/about.html">關於我</a>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="kicker">Soft • Personal</p>
+            <h1>你好，我是カツオ。</h1>
+            <p class="lead">
+              這裡是我的小小備忘錄：作品、學習軌跡、看過的動畫，以及喜歡的收藏。用溫柔的步調，慢慢更新。
+            </p>
+            <div class="cta-row">
+              <a class="btn" href="./pages/portfolio.html">探索我的作品</a>
+              <a class="btn secondary" href="./pages/watchlist.html">看看觀影紀錄</a>
+            </div>
+          </div>
+
+          <div class="avatar-wrap">
+            <div class="avatar" aria-label="個人生活照">
+              <!-- 把 src 換成你的照片檔（建議 800x800），放到 personal-site/assets/ 下 -->
+              <img
+                alt="你的生活照"
+                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3Cdefs%3E%3CradialGradient%20id='g'%20cx='30%25'%20cy='30%25'%20r='85%25'%3E%3Cstop%20offset='0'%20stop-color='%23f2f2f2'/%3E%3Cstop%20offset='1'%20stop-color='%23d9d9d9'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect%20width='800'%20height='800'%20fill='url(%23g)'/%3E%3Cpath%20d='M260%20600c30-80%20115-120%20140-120s110%2040%20140%20120'%20fill='none'%20stroke='%23111'%20stroke-width='10'%20stroke-linecap='round'/%3E%3Ccircle%20cx='400'%20cy='330'%20r='110'%20fill='none'%20stroke='%23111'%20stroke-width='10'/%3E%3Ctext%20x='50%25'%20y='92%25'%20text-anchor='middle'%20fill='%23666'%20font-size='26'%20font-family='system-ui'%3E放你的照片%3C/text%3E%3C/svg%3E"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="divider"></div>
+      </div>
+
+      <section class="section">
+        <div class="container">
+          <h2>快速預覽</h2>
+          <p>用幾個關鍵字，先讓自己被看見。</p>
+
+          <div class="grid" aria-label="快速預覽卡片">
+            <article class="card">
+              <h3 style="margin:0; font-size:16px;">學習中</h3>
+              <p class="meta">把興趣變成技能，慢慢堆疊。</p>
+            </article>
+            <article class="card">
+              <h3 style="margin:0; font-size:16px;">創作</h3>
+              <p class="meta">剪輯、設計、企劃或任何你在做的事。</p>
+            </article>
+            <article class="card">
+              <h3 style="margin:0; font-size:16px;">收藏</h3>
+              <p class="meta">角色拍立得、立牌、公仔、海報。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="footer-title">Copyright</p>
+          <div class="footer-links">
+            <span>© 2026 カツオ / KTO. All rights reserved.</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-title">Quick links</p>
+          <div class="footer-links">
+            <a href="./index.html">首頁</a>
+            <a href="./pages/credentials.html">證照與技能</a>
+            <a href="./pages/portfolio.html">作品集</a>
+            <a href="./pages/watchlist.html">觀影紀錄</a>
+            <a href="./pages/collections.html">愛好收藏</a>
+            <a href="./pages/about.html">關於我</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-title">Contact</p>
+          <div class="footer-links">
+            <a href="mailto:hello@example.com">hello@example.com</a>
+            <span>座右銘：保持好奇，保持簡單。</span>
+          </div>
+        </div>
+      </div>
+      <div class="fineprint">
+        <div class="container">本站為靜態頁面，可直接部署到 GitHub Pages。</div>
+      </div>
+    </footer>
+
+    <script src="./assets/main.js" defer></script>
+  </body>
+</html>
