@@ -284,6 +284,15 @@ h1{
 }
 .meta{color:var(--muted); font-size:13px; margin-top:6px}
 
+.copyright-box{
+  margin-top: 10px;
+  max-width: 72ch;
+}
+.copyright-text{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .pills{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
 .pill{
   border:1px solid var(--border);
