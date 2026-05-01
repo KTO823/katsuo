@@ -76,5 +76,9 @@
     watchlistSort.addEventListener('change', (e) => {
       sortBy(e.target.value);
     });
+
+    // Initial sort: year (new -> old)
+    watchlistSort.value = 'year-desc';
+    sortBy('year-desc');
   }
 })();
