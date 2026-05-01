@@ -270,6 +270,109 @@ h1{
   gap:16px;
   margin-top:16px;
 }
+
+/* Home: social-card layout */
+.tri-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+  margin-top:16px;
+}
+.card-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+.card-title{margin:0; font-size:16px}
+.link{
+  font-size:13px;
+  color: color-mix(in srgb, var(--text) 78%, white);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.link:hover{color: var(--accent)}
+
+.icon-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:10px;
+  margin-top:10px;
+}
+.icon-item{
+  border:1px solid var(--border);
+  border-radius:14px;
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  padding:10px 12px;
+}
+.icon-item > summary{
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:44px;
+  outline:none;
+}
+.icon-item > summary::-webkit-details-marker{display:none}
+.icon{
+  width:34px; height:34px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  display:grid;
+  place-items:center;
+  background: color-mix(in srgb, var(--paper) 70%, transparent);
+  flex: 0 0 auto;
+}
+.icon-item .label{
+  font-size:14px;
+  font-weight:650;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.icon-detail{padding-top:8px}
+
+.tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+.tag{
+  font-size:12px;
+  color: var(--muted);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:6px 10px;
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+}
+.list{margin-top:12px; display:grid; gap:10px}
+.row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.dot{
+  width:8px; height:8px;
+  border-radius:999px;
+  background: color-mix(in srgb, var(--accent) 55%, var(--paper));
+  flex: 0 0 auto;
+  margin-right:10px;
+}
+.row > span:nth-child(2){
+  flex: 1 1 auto;
+  min-width:0;
+}
+.timeline{display:grid; gap:10px}
+
+.oshi-card{background: linear-gradient(135deg, color-mix(in srgb, var(--paper) 88%, transparent), rgba(138,111,90,.06))}
+.oshi{display:flex; align-items:center; gap:12px; margin-top:6px}
+.oshi-ava{
+  width:44px; height:44px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  display:grid;
+  place-items:center;
+  background: color-mix(in srgb, var(--paper) 70%, transparent);
+}
 .card{
   border:1px solid var(--border);
   border-radius: var(--radius);
@@ -284,14 +387,11 @@ h1{
 }
 .meta{color:var(--muted); font-size:13px; margin-top:6px}
 
-.copyright-box{
-  margin-top: 10px;
-  max-width: 72ch;
-}
 .copyright-text{
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+.copyright-line{margin-bottom:0}
 
 .pills{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
 .pill{
@@ -386,6 +486,8 @@ h1{
   .hero-grid{grid-template-columns: 1fr; gap:22px}
   .avatar{width: 220px}
   .grid{grid-template-columns: 1fr}
+  .tri-grid{grid-template-columns: 1fr; gap:14px}
+  .icon-grid{grid-template-columns: repeat(2, minmax(0, 1fr))}
   .progress-list{grid-template-columns: 1fr}
   .square-grid{grid-template-columns: repeat(2, 1fr)}
   .footer-inner{grid-template-columns: 1fr; gap:18px}

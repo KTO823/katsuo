@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>カツオ（卡戳 / KTO）｜個人網站</title>
-    <meta name="description" content="日系溫柔風的個人網站：作品、證照、觀影紀錄與收藏。" />
+    <title>カツオ（卡戳 / KTO）｜社群名片</title>
+    <meta name="description" content="日系溫柔風的社群名片：遊戲、動畫、主推與作品連結。" />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
@@ -17,7 +17,6 @@
 
         <nav class="nav" aria-label="主要導覽">
           <a data-nav href="./index.html">首頁</a>
-          <a data-nav href="./pages/credentials.html">證照與技能</a>
           <a data-nav href="./pages/portfolio.html">作品集</a>
           <a data-nav href="./pages/watchlist.html">觀影紀錄</a>
           <a data-nav href="./pages/collections.html">愛好收藏</a>
@@ -42,7 +41,6 @@
       <div class="container">
         <nav class="mobile-nav" aria-label="主要導覽（手機）">
           <a data-nav href="./index.html">首頁</a>
-          <a data-nav href="./pages/credentials.html">證照與技能</a>
           <a data-nav href="./pages/portfolio.html">作品集</a>
           <a data-nav href="./pages/watchlist.html">觀影紀錄</a>
           <a data-nav href="./pages/collections.html">愛好收藏</a>
@@ -58,11 +56,11 @@
             <p class="kicker">Soft • Personal</p>
             <h1>你好，我是カツオ。</h1>
             <p class="lead">
-              這裡是我的小小備忘錄：作品、學習軌跡、看過的動畫，以及喜歡的收藏。用溫柔的步調，慢慢更新。
+              給社群朋友看的小名片：我在玩的遊戲、追的動畫、VTuber 主推，以及一些小作品連結。用溫柔的步調，慢慢更新。
             </p>
             <div class="cta-row">
-              <a class="btn" href="./pages/portfolio.html">探索我的作品</a>
-              <a class="btn secondary" href="./pages/watchlist.html">看看觀影紀錄</a>
+              <a class="btn" href="./pages/portfolio.html">作品 / Links</a>
+              <a class="btn secondary" href="./pages/watchlist.html">動畫清單</a>
             </div>
           </div>
 
@@ -84,28 +82,140 @@
 
       <section class="section">
         <div class="container">
-          <h2>快速預覽</h2>
-          <p>用幾個關鍵字，先讓自己被看見。</p>
+          <h2>近況（給社群朋友）</h2>
+          <p>精選就好：一眼看懂我最近的坑。</p>
 
-          <div class="grid" aria-label="快速預覽卡片">
-            <!-- COPY START: home-preview-card -->
-            <article class="card">
-              <h3 style="margin:0; font-size:16px;">學習中</h3>
-              <p class="meta">把興趣變成技能，慢慢堆疊。</p>
-            </article>
-            <!-- COPY END: home-preview-card -->
-            <!-- COPY START: home-preview-card -->
-            <article class="card">
-              <h3 style="margin:0; font-size:16px;">創作</h3>
-              <p class="meta">剪輯、設計、企劃或任何你在做的事。</p>
-            </article>
-            <!-- COPY END: home-preview-card -->
-            <!-- COPY START: home-preview-card -->
-            <article class="card">
-              <h3 style="margin:0; font-size:16px;">收藏</h3>
-              <p class="meta">角色拍立得、立牌、公仔、海報。</p>
-            </article>
-            <!-- COPY END: home-preview-card -->
+          <div class="tri-grid" aria-label="遊戲 / 動畫 / VTuber 主推">
+            <section class="card">
+              <div class="card-head">
+                <h3 class="card-title">Games</h3>
+                <a class="link" href="./pages/collections.html">更多</a>
+              </div>
+
+              <p class="meta" style="margin-top:0;">Currently playing</p>
+              <div class="icon-grid" aria-label="正在玩的遊戲（icon）">
+                <!-- COPY START: game-icon -->
+                <details class="icon-item">
+                  <summary>
+                    <span class="icon" aria-hidden="true">🎮</span>
+                    <span class="label">Game A</span>
+                  </summary>
+                  <div class="icon-detail">
+                    <div class="meta">平台：Steam｜狀態：主線中</div>
+                    <div class="meta">一句短評：________</div>
+                  </div>
+                </details>
+                <!-- COPY END: game-icon -->
+
+                <details class="icon-item">
+                  <summary>
+                    <span class="icon" aria-hidden="true">🕹️</span>
+                    <span class="label">Game B</span>
+                  </summary>
+                  <div class="icon-detail">
+                    <div class="meta">平台：PS｜狀態：通關</div>
+                    <div class="meta">一句短評：________</div>
+                  </div>
+                </details>
+              </div>
+
+              <p class="meta" style="margin-top:14px;">常駐</p>
+              <div class="icon-grid" aria-label="常駐遊戲（icon）">
+                <details class="icon-item">
+                  <summary>
+                    <span class="icon" aria-hidden="true">⚔️</span>
+                    <span class="label">Game C</span>
+                  </summary>
+                  <div class="icon-detail">
+                    <div class="meta">平台：Switch｜狀態：偶爾上線</div>
+                    <div class="meta">一句短評：________</div>
+                  </div>
+                </details>
+                <details class="icon-item">
+                  <summary>
+                    <span class="icon" aria-hidden="true">🏁</span>
+                    <span class="label">Game D</span>
+                  </summary>
+                  <div class="icon-detail">
+                    <div class="meta">平台：Steam｜狀態：白金目標</div>
+                    <div class="meta">一句短評：________</div>
+                  </div>
+                </details>
+              </div>
+            </section>
+
+            <section class="card">
+              <div class="card-head">
+                <h3 class="card-title">Anime</h3>
+                <a class="link" href="./pages/watchlist.html">清單</a>
+              </div>
+
+              <div class="tags" aria-label="分類標籤">
+                <span class="tag">本季</span>
+                <span class="tag">補番</span>
+                <span class="tag">神作殿堂</span>
+              </div>
+
+              <div class="list" aria-label="精選動畫（6-12 部）">
+                <!-- COPY START: anime-row -->
+                <div class="row">
+                  <span class="dot" aria-hidden="true"></span>
+                  <span>作品名 01</span>
+                  <span class="meta">本季</span>
+                </div>
+                <!-- COPY END: anime-row -->
+                <div class="row">
+                  <span class="dot" aria-hidden="true"></span>
+                  <span>作品名 02</span>
+                  <span class="meta">補番</span>
+                </div>
+                <div class="row">
+                  <span class="dot" aria-hidden="true"></span>
+                  <span>作品名 03</span>
+                  <span class="meta">神作</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="card oshi-card">
+              <div class="card-head">
+                <h3 class="card-title">Oshi（主推）</h3>
+                <a class="link" href="./pages/about.html">關於我</a>
+              </div>
+
+              <div class="oshi">
+                <div class="oshi-ava" aria-hidden="true">⭐</div>
+                <div>
+                  <div style="font-weight:700;">主推：________</div>
+                  <div class="meta">次推：________</div>
+                </div>
+              </div>
+
+              <p class="meta" style="margin-top:12px;">喜歡的點：用一句話寫（例：聲線 / 遊戲實況節奏 / 互動感）。</p>
+              <div class="cta-row" style="margin-top:12px;">
+                <a class="btn" href="#" target="_blank" rel="noreferrer">常看頻道</a>
+                <a class="btn secondary" href="#" target="_blank" rel="noreferrer">剪輯清單</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>最近更新</h2>
+          <p>讓人感覺這頁是活的：一行一條就好。</p>
+          <div class="card">
+            <div class="timeline" aria-label="最近更新清單">
+              <div class="row">
+                <span class="dot" aria-hidden="true"></span>
+                <span>2026-05-01：新增「觀影紀錄」版權標示欄位</span>
+              </div>
+              <div class="row">
+                <span class="dot" aria-hidden="true"></span>
+                <span>____：把 Currently playing 更新為 ______</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -124,7 +234,6 @@
           <p class="footer-title">Quick links</p>
           <div class="footer-links">
             <a href="./index.html">首頁</a>
-            <a href="./pages/credentials.html">證照與技能</a>
             <a href="./pages/portfolio.html">作品集</a>
             <a href="./pages/watchlist.html">觀影紀錄</a>
             <a href="./pages/collections.html">愛好收藏</a>
