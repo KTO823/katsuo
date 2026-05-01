@@ -334,6 +334,30 @@ h1{
 }
 .icon-detail{padding-top:8px}
 
+.sort-bar{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.sort-label{
+  font-size:13px;
+  color: var(--muted);
+  letter-spacing:.04em;
+}
+.sort-select{
+  min-height:44px;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  font-size:14px;
+  color: var(--text);
+}
+.sort-select:focus-visible{outline:none; box-shadow:var(--focus)}
+.sort-hint{margin:0}
+
 .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
 .tag{
   font-size:12px;

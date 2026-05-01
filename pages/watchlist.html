@@ -69,9 +69,23 @@
 
       <section class="section">
         <div class="container">
-          <div class="grid" aria-label="觀影卡片（封面 / 片名 / 短評）">
+          <div class="sort-bar" aria-label="排序工具列">
+            <label class="sort-label" for="watchlist-sort">排序</label>
+            <select id="watchlist-sort" class="sort-select" data-watchlist-sort>
+              <option value="default">預設（原順序）</option>
+              <option value="year-desc">年份（新 → 舊）</option>
+              <option value="year-asc">年份（舊 → 新）</option>
+              <option value="strokes-asc">筆畫（少 → 多）</option>
+              <option value="strokes-desc">筆畫（多 → 少）</option>
+              <option value="title-asc">標題（A → Z）</option>
+              <option value="title-desc">標題（Z → A）</option>
+            </select>
+            <span class="meta sort-hint">提示：請在卡片上填 `data-year` 與 `data-strokes`。</span>
+          </div>
+
+          <div class="grid" aria-label="觀影卡片（封面 / 片名 / 短評）" data-watchlist-grid>
             <!-- COPY START: watchlist-card -->
-            <article class="card">
+            <article class="card" data-title="作品名 01" data-year="2016" data-strokes="0">
               <div style="border:1px solid var(--border); border-radius:14px; overflow:hidden; aspect-ratio: 16 / 10; background: rgba(17,17,17,.02);">
                 <img
                   alt="封面（範例）"
@@ -88,7 +102,7 @@
             <!-- COPY END: watchlist-card -->
 
             <!-- COPY START: watchlist-card -->
-            <article class="card">
+            <article class="card" data-title="作品名 02" data-year="0" data-strokes="0">
               <div style="border:1px solid var(--border); border-radius:14px; overflow:hidden; aspect-ratio: 16 / 10; background: rgba(17,17,17,.02);">
                 <img
                   alt="封面（範例）"
@@ -105,7 +119,7 @@
             <!-- COPY END: watchlist-card -->
 
             <!-- COPY START: watchlist-card -->
-            <article class="card">
+            <article class="card" data-title="作品名 03" data-year="0" data-strokes="0">
               <div style="border:1px solid var(--border); border-radius:14px; overflow:hidden; aspect-ratio: 16 / 10; background: rgba(17,17,17,.02);">
                 <img
                   alt="封面（範例）"
@@ -122,7 +136,7 @@
             <!-- COPY END: watchlist-card -->
 
             <!-- COPY START: watchlist-card -->
-            <article class="card">
+            <article class="card" data-title="作品名 04" data-year="0" data-strokes="0">
               <div style="border:1px solid var(--border); border-radius:14px; overflow:hidden; aspect-ratio: 16 / 10; background: rgba(17,17,17,.02);">
                 <img
                   alt="封面（範例）"
@@ -139,7 +153,7 @@
             <!-- COPY END: watchlist-card -->
 
             <!-- COPY START: watchlist-card -->
-            <article class="card">
+            <article class="card" data-title="作品名 05" data-year="0" data-strokes="0">
               <div style="border:1px solid var(--border); border-radius:14px; overflow:hidden; aspect-ratio: 16 / 10; background: rgba(17,17,17,.02);">
                 <img
                   alt="封面（範例）"
@@ -156,7 +170,7 @@
             <!-- COPY END: watchlist-card -->
 
             <!-- COPY START: watchlist-card -->
-            <article class="card">
+            <article class="card" data-title="作品名 06" data-year="0" data-strokes="0">
               <div style="border:1px solid var(--border); border-radius:14px; overflow:hidden; aspect-ratio: 16 / 10; background: rgba(17,17,17,.02);">
                 <img
                   alt="封面（範例）"

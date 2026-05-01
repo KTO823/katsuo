@@ -35,4 +35,46 @@
     const resolved = new URL(href, location.href).pathname.replace(/\/+$/, '');
     if (resolved === path) a.setAttribute('aria-current', 'page');
   });
+
+  // Watchlist sorting (client-only)
+  const watchlistGrid = document.querySelector('[data-watchlist-grid]');
+  const watchlistSort = document.querySelector('[data-watchlist-sort]');
+  if (watchlistGrid && watchlistSort) {
+    const cards = Array.from(watchlistGrid.querySelectorAll('article.card'));
+    const originalOrder = cards.slice();
+
+    const getNum = (el, key) => {
+      const raw = el.getAttribute(`data-${key}`);
+      const n = Number(raw);
+      return Number.isFinite(n) ? n : 0;
+    };
+    const getStr = (el, key) => (el.getAttribute(`data-${key}`) || '').trim();
+    const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
+
+    function render(order) {
+      const frag = document.createDocumentFragment();
+      order.forEach((el) => frag.appendChild(el));
+      watchlistGrid.appendChild(frag);
+    }
+
+    function sortBy(mode) {
+      if (mode === 'default') return render(originalOrder);
+
+      const next = cards.slice();
+      next.sort((a, b) => {
+        if (mode === 'year-desc') return getNum(b, 'year') - getNum(a, 'year');
+        if (mode === 'year-asc') return getNum(a, 'year') - getNum(b, 'year');
+        if (mode === 'strokes-asc') return getNum(a, 'strokes') - getNum(b, 'strokes');
+        if (mode === 'strokes-desc') return getNum(b, 'strokes') - getNum(a, 'strokes');
+        if (mode === 'title-desc') return collator.compare(getStr(b, 'title'), getStr(a, 'title'));
+        // title-asc
+        return collator.compare(getStr(a, 'title'), getStr(b, 'title'));
+      });
+      render(next);
+    }
+
+    watchlistSort.addEventListener('change', (e) => {
+      sortBy(e.target.value);
+    });
+  }
 })();
