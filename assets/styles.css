@@ -409,6 +409,11 @@ h1{
   box-shadow: 0 12px 30px rgba(0,0,0,.08);
   border-color: color-mix(in srgb, var(--text) 18%, white);
 }
+.watchlist-card-head{margin-bottom:12px}
+.watchlist-card-head h3{margin:0 0 6px; font-size:18px}
+.watchlist-card-head .meta{margin:0; color:var(--muted); font-size:13px}
+.watchlist-list{margin:14px 0 0 18px; display:grid; gap:8px; list-style:disc}
+.watchlist-list li{font-size:14px; line-height:1.6}
 .meta{color:var(--muted); font-size:13px; margin-top:6px}
 
 .copyright-text{
