@@ -55,10 +55,10 @@
           <p class="kicker">Watchlist</p>
           <h1 style="margin-top:0;">觀影紀錄</h1>
           <p class="lead" style="margin-bottom:0;">
-            記錄那些陪我走過不同時期的作品。純文字清單只保留作品名稱、年份與分季 / 番外資訊。
+            記錄那些陪我走過不同時期的作品。每季、OVA、劇場版、番外篇都獨立一行。
           </p>
           <p class="meta" style="margin-top:12px; margin-bottom:0;">
-            多季作品、續作、番外篇請放在同一個分組內。排序仍保留年份與 A → Z。
+            排序以年份/月份為主，方便追蹤觀看時序。
           </p>
         </div>
       </section>
@@ -78,74 +78,134 @@
               <option value="title-asc">標題（A → Z）</option>
               <option value="title-desc">標題（Z → A）</option>
             </select>
-            <span class="meta sort-hint">提示：請在卡片上填 `data-year`。</span>
+            <span class="meta sort-hint">提示：請在卡片上填 `data-year` 與 `data-month`。</span>
           </div>
 
           <div class="grid" aria-label="觀影卡片（文字清單）" data-watchlist-grid>
-            <article class="card" data-title="作品名稱 01" data-year="2024">
+            <article class="card" data-title="作品名稱 01 - 第1季" data-year="2020" data-month="1">
               <div class="watchlist-row">
                 <div>
-                  <h3>作品名稱 01</h3>
-                  <p class="meta">多季 / 劇場版 / 番外篇</p>
+                  <h3>作品名稱 01 - 第1季</h3>
                 </div>
-                <span class="watchlist-year">2024</span>
+                <span class="watchlist-year">2020/1 - 24 集</span>
               </div>
-              <p class="watchlist-detail">第1季 2020（24 集）・第2季 2022（26 集）・特別篇 2023</p>
             </article>
 
-            <article class="card" data-title="作品名稱 02" data-year="2022">
+            <article class="card" data-title="作品名稱 01 - 第2季" data-year="2022" data-month="7">
               <div class="watchlist-row">
                 <div>
-                  <h3>作品名稱 02</h3>
-                  <p class="meta">單季 / OVA / 劇場版</p>
+                  <h3>作品名稱 01 - 第2季</h3>
                 </div>
-                <span class="watchlist-year">2022</span>
+                <span class="watchlist-year">2022/7 - 26 集</span>
               </div>
-              <p class="watchlist-detail">第1季 2022（12 集）・OVA 2022（2 集）・劇場版 2023</p>
             </article>
 
-            <article class="card" data-title="作品名稱 03" data-year="2021">
+            <article class="card" data-title="作品名稱 01 - 特別篇" data-year="2023" data-month="12">
               <div class="watchlist-row">
                 <div>
-                  <h3>作品名稱 03</h3>
-                  <p class="meta">多季作品 / 漫畫改編</p>
+                  <h3>作品名稱 01 - 特別篇</h3>
                 </div>
-                <span class="watchlist-year">2021</span>
+                <span class="watchlist-year">2023/12</span>
               </div>
-              <p class="watchlist-detail">第1季 2019（13 集）・第2季 2021（13 集）</p>
             </article>
 
-            <article class="card" data-title="作品名稱 04" data-year="2020">
+            <article class="card" data-title="作品名稱 02 - 第1季" data-year="2022" data-month="4">
               <div class="watchlist-row">
                 <div>
-                  <h3>作品名稱 04</h3>
-                  <p class="meta">單季 / 劇場版</p>
+                  <h3>作品名稱 02 - 第1季</h3>
                 </div>
-                <span class="watchlist-year">2020</span>
+                <span class="watchlist-year">2022/4 - 12 集</span>
               </div>
-              <p class="watchlist-detail">第1季 2020（11 集）・劇場版 2021</p>
             </article>
 
-            <article class="card" data-title="作品名稱 05" data-year="2019">
+            <article class="card" data-title="作品名稱 02 - OVA" data-year="2022" data-month="10">
               <div class="watchlist-row">
                 <div>
-                  <h3>作品名稱 05</h3>
-                  <p class="meta">舊番 / 多季整理</p>
+                  <h3>作品名稱 02 - OVA</h3>
                 </div>
-                <span class="watchlist-year">2019</span>
+                <span class="watchlist-year">2022/10 - 2 集</span>
               </div>
-              <p class="watchlist-detail">第1季 2016（12 集）・第2季 2018（13 集）</p>
             </article>
 
-            <article class="card" data-title="作品名稱 06" data-year="2018">
+            <article class="card" data-title="作品名稱 02 - 劇場版" data-year="2023" data-month="3">
               <div class="watchlist-row">
                 <div>
-                  <h3>作品名稱 06</h3>
-                  <p class="meta">短篇 / OVA / 特別篇</p>
+                  <h3>作品名稱 02 - 劇場版</h3>
                 </div>
-                <span class="watchlist-year">2018</span>
+                <span class="watchlist-year">2023/3</span>
               </div>
-              <p class="watchlist-detail">第1季 2018（10 集）・特別篇 2019</p>
+            </article>
+
+            <article class="card" data-title="作品名稱 03 - 第1季" data-year="2019" data-month="1">
+              <div class="watchlist-row">
+                <div>
+                  <h3>作品名稱 03 - 第1季</h3>
+                </div>
+                <span class="watchlist-year">2019/1 - 13 集</span>
+              </div>
+            </article>
+
+            <article class="card" data-title="作品名稱 03 - 第2季" data-year="2021" data-month="4">
+              <div class="watchlist-row">
+                <div>
+                  <h3>作品名稱 03 - 第2季</h3>
+                </div>
+                <span class="watchlist-year">2021/4 - 13 集</span>
+              </div>
+            </article>
+
+            <article class="card" data-title="作品名稱 04 - 第1季" data-year="2020" data-month="7">
+              <div class="watchlist-row">
+                <div>
+                  <h3>作品名稱 04 - 第1季</h3>
+                </div>
+                <span class="watchlist-year">2020/7 - 11 集</span>
+              </div>
+            </article>
+
+            <article class="card" data-title="作品名稱 04 - 劇場版" data-year="2021" data-month="12">
+              <div class="watchlist-row">
+                <div>
+                  <h3>作品名稱 04 - 劇場版</h3>
+                </div>
+                <span class="watchlist-year">2021/12</span>
+              </div>
+            </article>
+
+            <article class="card" data-title="作品名稱 05 - 第1季" data-year="2016" data-month="10">
+              <div class="watchlist-row">
+                <div>
+                  <h3>作品名稱 05 - 第1季</h3>
+                </div>
+                <span class="watchlist-year">2016/10 - 12 集</span>
+              </div>
+            </article>
+
+            <article class="card" data-title="作品名稱 05 - 第2季" data-year="2018" data-month="1">
+              <div class="watchlist-row">
+                <div>
+                  <h3>作品名稱 05 - 第2季</h3>
+                </div>
+                <span class="watchlist-year">2018/1 - 13 集</span>
+              </div>
+            </article>
+
+            <article class="card" data-title="作品名稱 06 - 第1季" data-year="2018" data-month="4">
+              <div class="watchlist-row">
+                <div>
+                  <h3>作品名稱 06 - 第1季</h3>
+                </div>
+                <span class="watchlist-year">2018/4 - 10 集</span>
+              </div>
+            </article>
+
+            <article class="card" data-title="作品名稱 06 - 特別篇" data-year="2019" data-month="11">
+              <div class="watchlist-row">
+                <div>
+                  <h3>作品名稱 06 - 特別篇</h3>
+                </div>
+                <span class="watchlist-year">2019/11</span>
+              </div>
             </article>
           </div>
         </div>
