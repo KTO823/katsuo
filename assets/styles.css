@@ -409,11 +409,37 @@ h1{
   box-shadow: 0 12px 30px rgba(0,0,0,.08);
   border-color: color-mix(in srgb, var(--text) 18%, white);
 }
-.watchlist-card-head{margin-bottom:12px}
-.watchlist-card-head h3{margin:0 0 6px; font-size:18px}
-.watchlist-card-head .meta{margin:0; color:var(--muted); font-size:13px}
-.watchlist-list{margin:14px 0 0 18px; display:grid; gap:8px; list-style:disc}
-.watchlist-list li{font-size:14px; line-height:1.6}
+.watchlist-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.watchlist-row > div{
+  min-width:0;
+}
+.watchlist-row h3{
+  margin:0;
+  font-size:16px;
+}
+.watchlist-row .meta{
+  margin:4px 0 0;
+  color:var(--muted);
+  font-size:13px;
+}
+.watchlist-year{
+  color:var(--muted);
+  font-size:13px;
+  white-space:nowrap;
+  flex:0 0 auto;
+}
+.watchlist-detail{
+  margin:10px 0 0 0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
 .meta{color:var(--muted); font-size:13px; margin-top:6px}
 
 .copyright-text{
