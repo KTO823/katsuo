@@ -62,8 +62,16 @@
 
       const next = cards.slice();
       next.sort((a, b) => {
-        if (mode === 'year-desc') return getNum(b, 'year') - getNum(a, 'year');
-        if (mode === 'year-asc') return getNum(a, 'year') - getNum(b, 'year');
+        if (mode === 'year-desc') {
+          const yearDiff = getNum(b, 'year') - getNum(a, 'year');
+          if (yearDiff !== 0) return yearDiff;
+          return getNum(b, 'month') - getNum(a, 'month');
+        }
+        if (mode === 'year-asc') {
+          const yearDiff = getNum(a, 'year') - getNum(b, 'year');
+          if (yearDiff !== 0) return yearDiff;
+          return getNum(a, 'month') - getNum(b, 'month');
+        }
         if (mode === 'strokes-asc') return getNum(a, 'strokes') - getNum(b, 'strokes');
         if (mode === 'strokes-desc') return getNum(b, 'strokes') - getNum(a, 'strokes');
         if (mode === 'title-desc') return collator.compare(getStr(b, 'title'), getStr(a, 'title'));

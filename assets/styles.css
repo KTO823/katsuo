@@ -271,6 +271,34 @@ h1{
   margin-top:16px;
 }
 
+.grid[data-watchlist-grid]{
+  display:block;
+  margin-top:16px;
+}
+
+.grid[data-watchlist-grid] .card{
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  background: transparent;
+  padding:12px 0;
+}
+
+.grid[data-watchlist-grid] .card:not(:last-child){
+  position:relative;
+  padding-bottom:20px;
+}
+
+.grid[data-watchlist-grid] .card:not(:last-child)::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+}
+
 /* Home: social-card layout */
 .tri-grid{
   display:grid;
@@ -411,10 +439,10 @@ h1{
 }
 .watchlist-row{
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   justify-content:space-between;
-  flex-wrap:wrap;
   gap:12px;
+  padding:0 8px;
 }
 .watchlist-row > div{
   min-width:0;
@@ -422,23 +450,13 @@ h1{
 .watchlist-row h3{
   margin:0;
   font-size:16px;
-}
-.watchlist-row .meta{
-  margin:4px 0 0;
-  color:var(--muted);
-  font-size:13px;
+  font-weight:500;
 }
 .watchlist-year{
   color:var(--muted);
-  font-size:13px;
+  font-size:14px;
   white-space:nowrap;
   flex:0 0 auto;
-}
-.watchlist-detail{
-  margin:10px 0 0 0;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.6;
 }
 .meta{color:var(--muted); font-size:13px; margin-top:6px}
 
