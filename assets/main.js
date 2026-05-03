@@ -50,23 +50,14 @@
     };
     const getStr = (el, key) => (el.getAttribute(`data-${key}`) || '').trim();
     const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
+    const strokeCollator = new Intl.Collator('zh-Hant-u-co-stroke', { numeric: true, sensitivity: 'base' });
 
-    const normalizeSeries = (title) => {
-      let text = title.trim();
-      text = text.replace(/(?:\s*[-–—]\s*)?第[0-9０-９]+(?:季|期|部)(?:[:：].*)?$/u, '');
-      text = text.replace(/(?:\s*[-–—]\s*)?(?:劇場版|OVA|外傳|外伝)(?:.*)$/u, '');
-      text = text.replace(/(?:\s*[-–—]\s*)?劇場版[:：].*$/u, '');
-      text = text.replace(/(?:\s*[-–—]\s*)?OVA[:：].*$/u, '');
-      text = text.replace(/\s*～.*$/u, '');
-      text = text.replace(/\s*【.*】$/u, '');
-      text = text.replace(/\s*\(.*\)$/u, '');
-      text = text.replace(/\s*：.*$/u, '');
-      text = text.replace(/\s*:.*/u, '');
-      text = text.replace(/\s*[-–—]\s*[^-–—]*$/u, '');
-      return text.trim() || title;
+    const getTitleKey = (el) => {
+      const title = getStr(el, 'title');
+      const cleaned = title.replace(/^[\s「『《〈【]+/, '');
+      const chars = Array.from(cleaned).filter((ch) => ch.trim() !== '');
+      return chars.slice(0, 3).join('');
     };
-
-    const getSeries = (el) => normalizeSeries(getStr(el, 'title'));
 
     function render(order) {
       const frag = document.createDocumentFragment();
@@ -92,16 +83,16 @@
         if (mode === 'strokes-asc') return getNum(a, 'strokes') - getNum(b, 'strokes');
         if (mode === 'strokes-desc') return getNum(b, 'strokes') - getNum(a, 'strokes');
         if (mode === 'title-desc') {
-          // 先按系列 Z→A，再按年月份新→舊
-          const seriesDiff = collator.compare(getSeries(b), getSeries(a));
-          if (seriesDiff !== 0) return seriesDiff;
+          // 先按前三個字的筆畫排序 Z→A，再按年月份新→舊
+          const titleDiff = strokeCollator.compare(getTitleKey(b), getTitleKey(a));
+          if (titleDiff !== 0) return titleDiff;
           const yearDiff = getNum(b, 'year') - getNum(a, 'year');
           if (yearDiff !== 0) return yearDiff;
           return getNum(b, 'month') - getNum(a, 'month');
         }
-        // title-asc: 先按系列 A→Z，再按年月份舊→新
-        const seriesDiff = collator.compare(getSeries(a), getSeries(b));
-        if (seriesDiff !== 0) return seriesDiff;
+        // title-asc: 先按前三個字的筆畫排序 A→Z，再按年月份舊→新
+        const titleDiff = strokeCollator.compare(getTitleKey(a), getTitleKey(b));
+        if (titleDiff !== 0) return titleDiff;
         const yearDiff = getNum(a, 'year') - getNum(b, 'year');
         if (yearDiff !== 0) return yearDiff;
         return getNum(a, 'month') - getNum(b, 'month');
