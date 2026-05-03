@@ -74,9 +74,20 @@
         }
         if (mode === 'strokes-asc') return getNum(a, 'strokes') - getNum(b, 'strokes');
         if (mode === 'strokes-desc') return getNum(b, 'strokes') - getNum(a, 'strokes');
-        if (mode === 'title-desc') return collator.compare(getStr(b, 'title'), getStr(a, 'title'));
-        // title-asc
-        return collator.compare(getStr(a, 'title'), getStr(b, 'title'));
+        if (mode === 'title-desc') {
+          // 先按系列 Z→A，再按年月份新→舊
+          const seriesDiff = collator.compare(getStr(b, 'series'), getStr(a, 'series'));
+          if (seriesDiff !== 0) return seriesDiff;
+          const yearDiff = getNum(b, 'year') - getNum(a, 'year');
+          if (yearDiff !== 0) return yearDiff;
+          return getNum(b, 'month') - getNum(a, 'month');
+        }
+        // title-asc: 先按系列 A→Z，再按年月份舊→新
+        const seriesDiff = collator.compare(getStr(a, 'series'), getStr(b, 'series'));
+        if (seriesDiff !== 0) return seriesDiff;
+        const yearDiff = getNum(a, 'year') - getNum(b, 'year');
+        if (yearDiff !== 0) return yearDiff;
+        return getNum(a, 'month') - getNum(b, 'month');
       });
       render(next);
     }
