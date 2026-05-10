@@ -344,6 +344,13 @@ h1{
   outline:none;
 }
 .icon-item > summary::-webkit-details-marker{display:none}
+.icon-item > .game-detail{
+  display:none;
+  padding-top:10px;
+}
+.icon-item[open] > .game-detail{
+  display:block;
+}
 .icon{
   width:44px; height:44px;
   border-radius:14px;
@@ -401,11 +408,16 @@ h1{
   padding:6px 10px;
   background: color-mix(in srgb, var(--paper) 86%, transparent);
 }
+.hint{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size:13px;
+}
 .list{margin-top:12px; display:grid; gap:10px}
 .row{
-  display:flex;
+  display:grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items:center;
-  justify-content:space-between;
   gap:12px;
 }
 .dot{
@@ -416,13 +428,12 @@ h1{
   margin-right:10px;
 }
 .row > span:nth-child(2){
-  flex: 1 1 auto;
   min-width:0;
 }
 .timeline{display:grid; gap:10px}
 
 .oshi-card{background: linear-gradient(135deg, color-mix(in srgb, var(--paper) 88%, transparent), rgba(138,111,90,.06))}
-.oshi{display:flex; align-items:center; gap:12px; margin-top:6px}
+.oshi{display:flex; align-items:flex-start; gap:12px; margin-top:6px}
 .oshi-ava{
   width:44px; height:44px;
   border-radius:16px;
@@ -436,6 +447,21 @@ h1{
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
+}
+.oshi-meta{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.oshi-top{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.btn.small{
+  padding:8px 12px;
+  font-size:13px;
 }
 .card{
   border:1px solid var(--border);

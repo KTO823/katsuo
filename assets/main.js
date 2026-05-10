@@ -36,6 +36,19 @@
     if (resolved === path) a.setAttribute('aria-current', 'page');
   });
 
+  // Only one game detail can be open at once
+  const gameDetails = document.querySelectorAll('details.icon-item');
+  if (gameDetails.length > 0) {
+    gameDetails.forEach((detail) => {
+      detail.addEventListener('toggle', () => {
+        if (!detail.open) return;
+        gameDetails.forEach((other) => {
+          if (other !== detail) other.removeAttribute('open');
+        });
+      });
+    });
+  }
+
   // Watchlist sorting (client-only)
   const watchlistGrid = document.querySelector('[data-watchlist-grid]');
   const watchlistSort = document.querySelector('[data-watchlist-sort]');
