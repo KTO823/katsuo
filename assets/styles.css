@@ -333,10 +333,10 @@ h1{
   border:1px solid var(--border);
   border-radius:14px;
   background: color-mix(in srgb, var(--paper) 86%, transparent);
-  padding:10px 12px;
-  min-height:90px;
+  padding:8px 12px;
   display:flex;
   flex-direction:column;
+  justify-content:flex-start;
   position:relative;
   overflow:visible;
 }
@@ -346,9 +346,10 @@ h1{
   display:flex;
   align-items:center;
   gap:10px;
-  min-height:44px;
+  min-height:0;
   outline:none;
 }
+
 .icon-item > summary::-webkit-details-marker{display:none}
 .icon-item > .game-detail{
   display:none;
