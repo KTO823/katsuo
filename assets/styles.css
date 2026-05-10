@@ -334,9 +334,11 @@ h1{
   border-radius:14px;
   background: color-mix(in srgb, var(--paper) 86%, transparent);
   padding:10px 12px;
-  min-height:130px;
+  min-height:90px;
   display:flex;
   flex-direction:column;
+  position:relative;
+  overflow:visible;
 }
 .icon-item > summary{
   cursor:pointer;
@@ -350,7 +352,17 @@ h1{
 .icon-item > summary::-webkit-details-marker{display:none}
 .icon-item > .game-detail{
   display:none;
-  padding-top:10px;
+  position:absolute;
+  left:0;
+  right:0;
+  top:100%;
+  z-index:2;
+  margin-top:10px;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background: var(--paper);
+  box-shadow: 0 20px 55px rgba(42,38,33,.10);
 }
 .icon-item[open] > .game-detail{
   display:block;
@@ -438,10 +450,9 @@ h1{
 
 .oshi-card{background: linear-gradient(135deg, color-mix(in srgb, var(--paper) 88%, transparent), rgba(138,111,90,.06))}
 .oshi{
-  display:grid;
-  grid-template-columns: auto 1fr;
-  gap:12px;
-  align-items:start;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
   margin-top:6px;
 }
 .oshi-ava{
@@ -463,6 +474,11 @@ h1{
   flex-direction:column;
   gap:10px;
 }
+.oshi-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 .oshi-top{
   display:flex;
   align-items:center;
@@ -470,7 +486,12 @@ h1{
   gap:10px;
   flex-wrap:wrap;
 }
-.oshi-meta p{
+.oshi-description{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.oshi-description p{
   margin:0;
 }
 .btn.small{
