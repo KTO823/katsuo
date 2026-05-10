@@ -327,12 +327,16 @@ h1{
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap:10px;
   margin-top:10px;
+  align-items:start;
 }
 .icon-item{
   border:1px solid var(--border);
   border-radius:14px;
   background: color-mix(in srgb, var(--paper) 86%, transparent);
   padding:10px 12px;
+  min-height:130px;
+  display:flex;
+  flex-direction:column;
 }
 .icon-item > summary{
   cursor:pointer;
@@ -433,7 +437,13 @@ h1{
 .timeline{display:grid; gap:10px}
 
 .oshi-card{background: linear-gradient(135deg, color-mix(in srgb, var(--paper) 88%, transparent), rgba(138,111,90,.06))}
-.oshi{display:flex; align-items:flex-start; gap:12px; margin-top:6px}
+.oshi{
+  display:grid;
+  grid-template-columns: auto 1fr;
+  gap:12px;
+  align-items:start;
+  margin-top:6px;
+}
 .oshi-ava{
   width:44px; height:44px;
   border-radius:16px;
@@ -456,8 +466,12 @@ h1{
 .oshi-top{
   display:flex;
   align-items:center;
+  justify-content:space-between;
   gap:10px;
   flex-wrap:wrap;
+}
+.oshi-meta p{
+  margin:0;
 }
 .btn.small{
   padding:8px 12px;
