@@ -36,12 +36,18 @@
     if (resolved === path) a.setAttribute('aria-current', 'page');
   });
 
-  // Only one game detail can be open at once
+  // assets/main.js
   const gameDetails = document.querySelectorAll('details.icon-item');
   if (gameDetails.length > 0) {
     gameDetails.forEach((detail) => {
       detail.addEventListener('toggle', () => {
-        if (!detail.open) return;
+        if (!detail.open) {
+          // [新增] 當收起時，稍微觸發頁面重繪，防止手機端殘留陰影或區塊
+          detail.style.display = 'none';
+          detail.offsetHeight; // 觸發 reflow
+          detail.style.display = '';
+          return;
+        }
         gameDetails.forEach((other) => {
           if (other !== detail) other.removeAttribute('open');
         });
