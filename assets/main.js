@@ -123,8 +123,38 @@
       sortBy(e.target.value);
     });
 
-    // Initial sort: year (new -> old)
     watchlistSort.value = 'year-desc';
     sortBy('year-desc');
   }
+
+  // === [新增] 彈窗（Modal）控制邏輯 ===
+  const openButtons = document.querySelectorAll('[data-modal-target]');
+  const closeButtons = document.querySelectorAll('.modal-close-btn');
+  const overlays = document.querySelectorAll('.modal-overlay');
+
+  // 開啟彈窗
+  openButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modalId = btn.getAttribute('data-modal-target');
+      const modal = document.getElementById(modalId);
+      if (modal) modal.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  // 點擊 ✕ 按鈕關閉
+  closeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modal = btn.closest('.modal-overlay');
+      if (modal) modal.setAttribute('aria-hidden', 'true');
+    });
+  });
+
+  // 點擊彈窗外部半透明處關閉
+  overlays.forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.setAttribute('aria-hidden', 'true');
+      }
+    });
+  });
 })();
