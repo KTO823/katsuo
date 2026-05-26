@@ -633,8 +633,6 @@ h1{
 }
 
 /* Responsive */
-
-/* Responsive */
 @media (max-width: 920px){
   .hero-grid{grid-template-columns: 1fr; gap:22px}
   .avatar{width: 220px}
@@ -644,36 +642,46 @@ h1{
   .progress-list{grid-template-columns: 1fr}
   .footer-inner{grid-template-columns: 1fr; gap:18px}
 
-  /* 修正手機外層大容器，不讓它內縮太多，釋放更多空間給格子 */
+  /* 1. 讓大容器在手機上維持舒適的置中寬度 */
   .container {
-    width: calc(100% - 24px) !important;
+    width: min(var(--container), calc(100% - 48px)) !important;
   }
 
-  /* 強制手機網格完全撐開，並把左右間距縮小到 12px，格子才不會太遠 */
+  /* 2. 重點修復：改用 auto-fit。卡片不會被硬生生拉開，而是會依據自己固定的寬度，在中央整齊靠攏 */
   .square-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(130px, 160px)) !important; /* 嚴格鎖定兩欄卡片的精緻大小 */
+    justify-content: center !important; /* 這行是關鍵！讓兩排格子直接在畫面中間靠攏 */
+    gap: 16px !important; /* 格子與格子的左右、上下間距，不再鬆散 */
     padding: 0 !important;
-    margin: 14px 0 0 0 !important;
+    margin: 18px auto 0 auto !important;
     width: 100% !important;
   }
 
-  /* 強制卡片塞滿這兩欄，高度由內容決定，並減少卡片內部不必要的留白 */
+  /* 3. 確保單個卡片不會變形，高度隨內容拉長 */
   .square {
     width: 100% !important;
     height: auto !important;
-    padding: 10px !important;
+    padding: 0 !important;
+    border-radius: 18px !important;
   }
 
-  /* 解開圖片區塊的正方形鎖定，並限制最大高度，讓拍立得完整呈現 */
+  /* 4. 讓直式的拍立得在固定小格子裡看得到全部 */
   .square .img {
-    aspect-ratio: auto !important;
+    aspect-ratio: 1 / 1 !important; /* 保持精緻的 1:1 外框 */
     width: 100% !important;
     height: auto !important;
-    max-height: 180px !important; 
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  .square img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* 照片乖乖縮小在方框內，露出完整的全貌 */
+    padding: 6px !important; /* 邊緣稍微留白，看起來更有質感 */
   }
 
   .nav{display:none}
