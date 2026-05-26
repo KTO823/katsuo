@@ -593,8 +593,10 @@ h1{
   overflow:hidden;
 }
 .square img{
-  width:100%; height:100%;
-  object-fit:cover;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  padding: 8px; 
   transition: transform .25s ease;
 }
 .square:hover img{transform: scale(1.04)}
@@ -637,7 +639,10 @@ h1{
   .tri-grid{grid-template-columns: 1fr; gap:14px}
   .icon-grid{grid-template-columns: repeat(2, minmax(0, 1fr))}
   .progress-list{grid-template-columns: 1fr}
-  .square-grid{grid-template-columns: repeat(2, 1fr)}
+  .square-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
   .footer-inner{grid-template-columns: 1fr; gap:18px}
 
   .nav{display:none}
