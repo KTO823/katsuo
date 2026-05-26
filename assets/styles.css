@@ -576,6 +576,7 @@ h1{
   grid-template-columns: repeat(4, 1fr);
   gap:14px;
   margin-top:18px;
+  width: 100%; /* 確保在任何裝置下，網格基底都是 100% 撐滿 */
 }
 .square{
   border:1px solid var(--border);
@@ -633,6 +634,7 @@ h1{
 
 /* Responsive */
 
+/* Responsive */
 @media (max-width: 920px){
   .hero-grid{grid-template-columns: 1fr; gap:22px}
   .avatar{width: 220px}
@@ -640,39 +642,44 @@ h1{
   .tri-grid{grid-template-columns: 1fr; gap:14px}
   .icon-grid{grid-template-columns: repeat(2, minmax(0, 1fr))}
   .progress-list{grid-template-columns: 1fr}
+  .footer-inner{grid-template-columns: 1fr; gap:18px}
+
+  /* 修正手機外層大容器，不讓它內縮太多，釋放更多空間給格子 */
   .container {
-    width: min(var(--container), calc(100% - 24px)) !important;
+    width: calc(100% - 24px) !important;
   }
+
+  /* 強制手機網格完全撐開，並把左右間距縮小到 12px，格子才不會太遠 */
+  .square-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    margin: 14px 0 0 0 !important;
+    width: 100% !important;
+  }
+
+  /* 強制卡片塞滿這兩欄，高度由內容決定，並減少卡片內部不必要的留白 */
   .square {
     width: 100% !important;
     height: auto !important;
-    padding: 12px 8px 8px 8px !important; /* 縮小內襯，留更多空間給圖文 */
+    padding: 10px !important;
   }
-  .square-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important; 
-    padding: 0 !important;
-    margin-top: 14px !important;
-  }
+
+  /* 解開圖片區塊的正方形鎖定，並限制最大高度，讓拍立得完整呈現 */
   .square .img {
     aspect-ratio: auto !important;
     width: 100% !important;
     height: auto !important;
-    max-height: 200px !important; /* 限制一個舒適的手機版圖片高度 */
+    max-height: 180px !important; 
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
   }
-  .footer-inner{grid-template-columns: 1fr; gap:18px}
 
   .nav{display:none}
   .menu-btn{display:inline-flex; align-items:center; justify-content:center}
   .mobile-panel[data-open="true"]{display:block}
   body[data-menu-open="true"]{overflow:hidden}
-}
-
-@media (prefers-reduced-motion: reduce){
-  *{transition:none !important; scroll-behavior:auto !important}
 }
 
 /* ==========================================================================
