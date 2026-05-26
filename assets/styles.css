@@ -640,8 +640,19 @@ h1{
   .icon-grid{grid-template-columns: repeat(2, minmax(0, 1fr))}
   .progress-list{grid-template-columns: 1fr}
   .square-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+    padding: 0 4px;
+    height: auto !important; 
+    padding-bottom: 8px;
+  }
+  .square .img {
+    aspect-ratio: auto !important; 
+    max-height: 240px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
   }
   .footer-inner{grid-template-columns: 1fr; gap:18px}
 
