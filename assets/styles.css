@@ -642,45 +642,42 @@ h1{
   .progress-list{grid-template-columns: 1fr}
   .footer-inner{grid-template-columns: 1fr; gap:18px}
 
-  /* 1. 讓大容器在手機上維持舒適的置中寬度 */
   .container {
-    width: min(var(--container), calc(100% - 48px)) !important;
+    width: calc(100% - 32px) !important;
+    margin: 0 auto !important;
   }
-  
+
   .square-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(35%, 160px)) !important; 
-    justify-content: center !important; /* 永遠在手機畫面正中央靠攏對齊 */
-    gap: 4% !important; /* 間距也改用百分比，會隨螢幕大小自動變寬或縮窄，非常自然 */
-    padding: 0 !important;
-    margin: 18px auto 0 auto !important; /* 左右 auto 確保大容器絕對置中 */
+    grid-template-columns: repeat(2, 1fr) !important; /* 兩排平分，釋放卡片大小 */
+    gap: 14px !important; /* 兩格之間維持 14px 的緊湊縫隙 */
+    justify-content: center !important;
     width: 100% !important;
+    max-width: 420px !important; /* 鎖定網格總寬度，讓它們在中間靠齊不分離 */
+    margin: 18px auto 0 auto !important; /* 確保整個網格絕對置中 */
+    padding: 0 !important;
   }
 
   .square {
-    flex: 0 1 calc(50% - 10px) !important; 
-    max-width: 155px !important; 
+    width: 100% !important;
     height: auto !important;
-    padding: 0 !important;
+    padding: 12px 10px !important; /* 稍微加大內距，讓文字有舒適的空間 */
     border-radius: 18px !important;
+    box-sizing: border-box !important;
   }
 
-  /* 4. 讓直式的拍立得在固定小格子裡看得到全部 */
   .square .img {
-    aspect-ratio: 1 / 1 !important; /* 保持精緻的 1:1 外框 */
     width: 100% !important;
     height: auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    overflow: hidden !important;
   }
 
   .square img {
     width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important; /* 照片乖乖縮小在方框內，露出完整的全貌 */
-    padding: 6px !important; /* 邊緣稍微留白，看起來更有質感 */
+    height: auto !important;
+    object-fit: contain !important; /* 確保拍立得不會被裁切 */
   }
 
   .nav{display:none}
