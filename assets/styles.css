@@ -646,19 +646,20 @@ h1{
   .container {
     width: min(var(--container), calc(100% - 48px)) !important;
   }
-
+  
   .square-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(130px, 160px)) !important; 
-    justify-content: center !important; 
-    gap: 16px !important; 
+    grid-template-columns: repeat(2, minmax(35%, 160px)) !important; 
+    justify-content: center !important; /* 永遠在手機畫面正中央靠攏對齊 */
+    gap: 4% !important; /* 間距也改用百分比，會隨螢幕大小自動變寬或縮窄，非常自然 */
     padding: 0 !important;
-    width: fit-content !important; 
-    margin: 18px auto 0 auto !important; 
+    margin: 18px auto 0 auto !important; /* 左右 auto 確保大容器絕對置中 */
+    width: 100% !important;
   }
 
   .square {
-    width: 100% !important;
+    flex: 0 1 calc(50% - 10px) !important; 
+    max-width: 155px !important; 
     height: auto !important;
     padding: 0 !important;
     border-radius: 18px !important;
