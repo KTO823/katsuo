@@ -647,18 +647,16 @@ h1{
     width: min(var(--container), calc(100% - 48px)) !important;
   }
 
-  /* 2. 重點修復：改用 auto-fit。卡片不會被硬生生拉開，而是會依據自己固定的寬度，在中央整齊靠攏 */
   .square-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(130px, 160px)) !important; /* 嚴格鎖定兩欄卡片的精緻大小 */
-    justify-content: center !important; /* 這行是關鍵！讓兩排格子直接在畫面中間靠攏 */
-    gap: 16px !important; /* 格子與格子的左右、上下間距，不再鬆散 */
+    grid-template-columns: repeat(2, minmax(130px, 160px)) !important; 
+    justify-content: center !important; 
+    gap: 16px !important; 
     padding: 0 !important;
-    margin: 18px auto 0 auto !important;
-    width: 100% !important;
+    width: fit-content !important; 
+    margin: 18px auto 0 auto !important; 
   }
 
-  /* 3. 確保單個卡片不會變形，高度隨內容拉長 */
   .square {
     width: 100% !important;
     height: auto !important;
