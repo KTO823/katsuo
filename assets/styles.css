@@ -692,6 +692,12 @@ h1{
     padding: 4px !important;
     box-sizing: border-box !important;
   }
+  /* 禁止所有圖片被右鍵選取、拖曳或點擊 */
+  .square img {
+    pointer-events: none; 
+    -webkit-user-drag: none; 
+    user-select: none; 
+  }
 
   .nav{display:none}
   .menu-btn{display:inline-flex; align-items:center; justify-content:center}
