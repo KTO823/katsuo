@@ -643,32 +643,34 @@ h1{
   .footer-inner{grid-template-columns: 1fr; gap:18px}
 
   .container {
-    width: calc(100% - 32px) !important;
-    margin: 0 auto !important;
+    width: 100% !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
   }
 
   .square-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* 兩排平分，釋放卡片大小 */
-    gap: 14px !important; /* 兩格之間維持 14px 的緊湊縫隙 */
-    justify-content: center !important;
+    grid-template-columns: 1fr 1fr !important; /* 兩排絕對 1:1 平分空間，格子自然變大 */
+    gap: 12px !important; /* 格子之間被死死鎖定在 12px 的小縫隙，絕不會分開 */
     width: 100% !important;
-    max-width: 420px !important; /* 鎖定網格總寬度，讓它們在中間靠齊不分離 */
-    margin: 18px auto 0 auto !important; /* 確保整個網格絕對置中 */
+    max-width: 380px !important; /* 限制收藏牆的總寬度，讓整體優雅地置中 */
+    margin: 20px auto 0 auto !important; /* 靠這行讓整個牆在畫面正中央 */
     padding: 0 !important;
   }
 
   .square {
     width: 100% !important;
+    max-width: none !important;
     height: auto !important;
-    padding: 12px 10px !important; /* 稍微加大內距，讓文字有舒適的空間 */
-    border-radius: 18px !important;
+    padding: 12px 10px !important;
     box-sizing: border-box !important;
+    border-radius: 18px !important;
   }
 
   .square .img {
     width: 100% !important;
-    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    max-height: none !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -676,8 +678,8 @@ h1{
 
   .square img {
     width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important; /* 確保拍立得不會被裁切 */
+    height: 100% !important;
+    object-fit: contain !important;
   }
 
   .nav{display:none}
