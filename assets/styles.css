@@ -632,6 +632,20 @@ h1{
   font-size:13px;
 }
 
+img {
+  pointer-events: none !important;
+  -webkit-user-drag: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+.square, .avatar {
+  -webkit-touch-callout: none !important;
+  user-select: none !important; 
+  -webkit-user-select: none !important;
+}
+
 /* Responsive */
 @media (max-width: 920px){
   .hero-grid{grid-template-columns: 1fr; gap:22px}
@@ -691,22 +705,6 @@ h1{
     left: 0 !important;
     padding: 4px !important;
     box-sizing: border-box !important;
-  }
-
-  /* 禁止整張卡片被反白選取與長按 */
-  .square {
-    -webkit-touch-callout: none; /* 【關鍵】徹底封殺手機版長按跳出選單 */
-    user-select: none; 
-    -webkit-user-select: none; /* 針對蘋果系統的禁止反白 */
-  }
-
-  /* 禁止圖片被右鍵、拖曳或單獨點擊 */
-  .square img {
-    pointer-events: none; /* 讓滑鼠點不到圖片（自然無法右鍵） */
-    -webkit-user-drag: none; /* 針對蘋果與 Chrome 系統禁止拖曳圖片 */
-    user-select: none; 
-    -webkit-user-select: none;
-    -webkit-touch-callout: none; /* 雙重保險，禁止圖片長按 */
   }
 
   .nav{display:none}
