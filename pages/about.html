@@ -52,10 +52,10 @@
     <main>
       <section class="section">
         <div class="container">
-          <p class="kicker">About</p>
+          <p class="kicker">About Me</p>
           <h1 style="margin-top:0;">關於我</h1>
-          <p class="lead" style="margin-bottom:0;">
-            其實我也很不懂我自己。
+          <p class="lead" style="margin-bottom:0; font-style: italic;">
+            「其實我也很不懂我自己，但我喜歡在清淨無聲的角落。」
           </p>
         </div>
       </section>
@@ -66,30 +66,49 @@
 
       <section class="section">
         <div class="container">
-          <div class="grid" style="grid-template-columns: 1.3fr .7fr;">
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+            
             <article class="card">
-              <h2 style="margin-top:0;">我的想法</h2>
-              <p style="margin-top:0;">
-                <strong>現在：</strong>我正在緩慢地探索世界，試著努力成長。
-              </p>
-              <p>
-                <strong>過去：</strong>一路上我學到的最重要的事的是別內耗，也因此開始重視自己。
-              </p>
-              <p style="margin-bottom:0;">
-                <strong>未來：</strong>還沒有特別的想法，目前的可能是當翻譯。
-              </p>
+              <h2 style="margin-top:0; font-size: 22px;">我的軌跡</h2>
+              
+              <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 16px; color: var(--text); margin-bottom: 8px;">✦ 現在：是個大學生</h3>
+                <p style="margin-top:0; font-size: 15px; line-height: 1.7; color: var(--muted);">
+                  覺得還是要多跟人講話比較好。
+                </p>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 16px; color: var(--text); margin-bottom: 8px;">✦ 過去：從 0 到 1 的企劃實踐</h3>
+                <p style="margin-top:0; font-size: 15px; line-height: 1.7; color: var(--muted);">
+                  從參與簡報比賽獲獎，到撰寫完整的專案企劃，我學到最珍貴的經驗是如何將天馬行空的構想落地。這讓我開始重視每一個專案「從 0 到完成」的完整歷程，而不僅僅只是最終的活動內容。
+                </p>
+              </div>
+
+              <div>
+                <h3 style="font-size: 16px; color: var(--text); margin-bottom: 8px;">✦ 未來：踏上新的旅程</h3>
+                <p style="margin-bottom:0; font-size: 15px; line-height: 1.7; color: var(--muted);">
+                  準備迎接 2026 年的日本實習挑戰。期望能將語言專長，用自己的步調，穩定地在世界中留下足跡。
+                </p>
+              </div>
             </article>
 
-            <aside class="card">
-              <h2 style="margin-top:0;">聯絡我</h2>
-              <p class="meta" style="margin-top:0;">總覺得需要放個電子信箱</p>
-              <div class="cta-row" style="margin-top:14px;">
-                <a class="btn" href="mailto:kto823823@gmail.com">寄信給我</a>
+            <aside class="card" style="background: color-mix(in srgb, var(--paper) 60%, transparent); border: 1px solid color-mix(in srgb, var(--text) 10%, transparent);">
+              <h2 style="margin-top:0; font-size: 22px;">聯絡</h2>
+              <p class="meta" style="margin-top:0; font-size: 14.5px; line-height: 1.6;">
+                無論是關於日語交流，或是VTuber與創作心得，都歡迎與我聯繫。
+              </p>
+              
+              <div class="cta-row" style="margin-top: 24px;">
+                <a class="btn" href="mailto:kto823823@gmail.com" style="width: 100%; text-align: center;">✉️ 寄信給我</a>
               </div>
-              <div class="meta" style="margin-top:12px;">
-                Email：<a href="mailto:kto823823@gmail.com" style="text-decoration: underline; text-underline-offset: 4px;">kto823823@gmail.com</a>
+              
+              <div class="meta" style="margin-top:20px; padding-top: 16px; border-top: 1px dashed color-mix(in srgb, var(--text) 20%, transparent);">
+                <span style="display: block; margin-bottom: 6px;">工作信箱：</span>
+                <a href="mailto:kto823823@gmail.com" style="text-decoration: none; font-weight: 600; color: var(--text);">kto823823@gmail.com</a>
               </div>
             </aside>
+            
           </div>
         </div>
       </section>
