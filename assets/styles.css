@@ -707,6 +707,28 @@ img {
     box-sizing: border-box !important;
   }
 
+  .modal-window {
+    width: calc(100% - 32px) !important; /* 確保彈窗左右不會貼死螢幕 */
+    padding: 24px 20px !important; /* 增加彈窗內部的上下左右留白 */
+  }
+
+  .modal-header h2 {
+    font-size: 20px !important; /* 稍微縮小標題，避免在小螢幕折行太多 */
+    margin-bottom: 12px !important;
+  }
+
+  .modal-body p {
+    font-size: 16px !important; /* 放大內文，最適合手機閱讀的尺寸 */
+    line-height: 1.7 !important; /* 拉大行距，讓文字呼吸 */
+    margin-bottom: 20px !important;
+  }
+
+  .modal-body h3 {
+    font-size: 18px !important;
+    margin-top: 24px !important; /* 讓副標題與上一段拉開距離 */
+    margin-bottom: 10px !important;
+  }
+
   .nav{display:none}
   .menu-btn{display:inline-flex; align-items:center; justify-content:center}
   .mobile-panel[data-open="true"]{display:block}
