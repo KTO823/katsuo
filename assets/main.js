@@ -158,3 +158,28 @@
     });
   });
 })();
+
+// =========================================
+// 回到置頂按鈕邏輯
+// =========================================
+const backToTopBtn = document.getElementById("backToTop");
+
+if (backToTopBtn) {
+  // 監聽網頁捲動事件
+  window.addEventListener("scroll", () => {
+    // 當往下捲動超過 300px 時，顯示按鈕
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
+
+  // 點擊按鈕時，平滑回到最上方
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
