@@ -862,3 +862,20 @@ html {
     height: 44px;
   }
 }
+
+/* =========================================
+   觀影紀錄：動態自動編號 (不受排序切換影響)
+   ========================================= */
+
+/* 1. 在觀影清單的外框初始化計數器 */
+[data-watchlist-grid] {
+  counter-reset: anime-list;
+}
+
+/* 2. 針對每張卡片的標題 (h3) 進行自動編號 */
+[data-watchlist-grid] .card h3::before {
+  counter-increment: anime-list; /* 每次遇到一個標題，數字就加 1 */
+  content: counter(anime-list) ". "; /* 在標題最前面顯示 "數字. " */
+  color: var(--muted); /* 讓數字的顏色比標題稍微淡一點點，增加層次感 */
+  font-weight: 500; /* 讓數字與標題粗細一致 */
+}
