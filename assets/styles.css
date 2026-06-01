@@ -879,3 +879,37 @@ html {
   color: var(--muted); /* 讓數字的顏色比標題稍微淡一點點，增加層次感 */
   font-weight: 500; /* 讓數字與標題粗細一致 */
 }
+
+/* =========================================
+   觀影紀錄：下拉折疊選單 (Details/Summary)
+   ========================================= */
+
+/* 1. 讓點擊區域變成手指游標，並拿掉預設的醜醜黑色三角形 */
+.watchlist-details summary {
+  cursor: pointer;
+  list-style: none; /* 隱藏原生箭頭 */
+}
+.watchlist-details summary::-webkit-details-marker {
+  display: none; /* 針對 Safari 的隱藏 */
+}
+
+/* 2. 點開後顯示的子選單區塊（加上虛線分隔與間距） */
+.watchlist-sub {
+  padding-top: 12px;
+  margin-top: 12px;
+  border-top: 1px dashed color-mix(in srgb, var(--text) 20%, transparent);
+  font-size: 14.5px;
+  line-height: 1.8;
+  padding-left: 24px; /* 稍微往內縮，對齊主標題的文字 (避開數字) */
+}
+
+/* 3. 子選單每一行的文字顏色調淡，區分層次 */
+.watchlist-sub div {
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+/* 滑鼠移過去子選單時文字稍微變亮一點 */
+.watchlist-sub div:hover {
+  color: var(--text);
+}
