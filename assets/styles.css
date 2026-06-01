@@ -893,17 +893,32 @@ html {
   display: none; /* 針對 Safari 的隱藏 */
 }
 
-/* 2. 點開後顯示的子選單區塊（加上虛線分隔與間距） */
+/* 2. 【新增】在年份旁邊加上「▼」提示符號，並設定翻轉動畫 */
+.watchlist-details summary .watchlist-year::after {
+  content: "▼";
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  transition: transform 0.3s ease; /* 平滑翻轉效果 */
+}
+
+/* 點開選單時，讓「▼」轉 180 度變成「▲」 */
+.watchlist-details[open] summary .watchlist-year::after {
+  transform: rotate(180deg);
+}
+
+/* 3. 子選單區塊（加大縮排，避開前面的數字標號） */
 .watchlist-sub {
   padding-top: 12px;
   margin-top: 12px;
   border-top: 1px dashed color-mix(in srgb, var(--text) 20%, transparent);
   font-size: 14.5px;
   line-height: 1.8;
-  padding-left: 24px; /* 稍微往內縮，對齊主標題的文字 (避開數字) */
+  padding-left: 30px; /* 【修改】加大縮排，讓它跟主標題的文字對齊，不再超過標號 */
 }
 
-/* 3. 子選單每一行的文字顏色調淡，區分層次 */
+/* 4. 子選單每一行的文字顏色調淡，區分層次 */
 .watchlist-sub div {
   color: var(--muted);
   transition: color 0.2s;
