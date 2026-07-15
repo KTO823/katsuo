@@ -972,3 +972,104 @@ html {
 .watchlist-sub div:hover {
   color: var(--text);
 }
+/* =========================================
+   收藏頁：展示櫃暗色打光效果
+   進入頁面時畫面慢慢暗下來，打光層固定不隨捲動移動，
+   每個收藏格帶 70% 透明感，滾動時會透出固定的光暈，
+   營造像展櫃一樣的陳列感。
+   ========================================= */
+
+/* 1. 進頁動畫：從原本的米白背景，慢慢過渡到深色背景 */
+.page-collections {
+  animation: collectionsDim 1.3s ease forwards;
+}
+
+@keyframes collectionsDim {
+  from { background-color: var(--bg); }
+  to   { background-color: #1c1a17; }
+}
+
+/* 2. 固定的打光層：position: fixed，所以滾動頁面時光暈不會跟著跑 */
+.page-collections::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 40% at 50% 0%, rgba(255, 244, 214, .16), transparent 65%),
+    radial-gradient(ellipse 45% 35% at 15% 100%, rgba(255, 244, 214, .05), transparent 70%),
+    radial-gradient(ellipse 45% 35% at 85% 100%, rgba(255, 244, 214, .05), transparent 70%);
+}
+
+/* 3. 讓實際內容顯示在打光層之上，不然會被蓋住 */
+.page-collections .site-header,
+.page-collections main,
+.page-collections .site-footer,
+.page-collections .mobile-panel {
+  position: relative;
+  z-index: 1;
+}
+
+/* 4. 深色背景下，文字顏色跟著調亮，維持可讀性 */
+.page-collections h1,
+.page-collections h2,
+.page-collections p,
+.page-collections .kicker {
+  color: #e8e0d0;
+}
+.page-collections .lead,
+.page-collections .meta {
+  color: #a99f8c;
+}
+.page-collections .divider {
+  background: rgba(232, 224, 208, .14);
+}
+
+/* 5. header / footer 也跟著換成深色，避免上下留白突兀 */
+.page-collections .site-header,
+.page-collections .site-footer {
+  background: #1c1a17;
+  border-color: rgba(201, 191, 168, .15);
+}
+.page-collections .nav a,
+.page-collections .brand,
+.page-collections .footer-links a,
+.page-collections .footer-title,
+.page-collections .footer-links span {
+  color: #c9bfa8;
+}
+
+/* 6. 收藏格：70% 透明感，滾動時會透出固定的光暈，形成展示櫃的漂浮感 */
+.page-collections .square {
+  opacity: .7;
+  background: rgba(38, 34, 29, .9);
+  border-color: rgba(201, 191, 168, .25);
+  transition: opacity .2s ease, transform .15s ease, box-shadow .15s ease;
+}
+.page-collections .square:hover {
+  opacity: 1; /* 滑鼠移過去時，展品「亮起來」看清楚一點 */
+}
+.page-collections .square .cap {
+  color: #c9bfa8;
+}
+
+/* =========================================
+   觀影紀錄：個人心得下拉（非必填，只有想寫的作品才加）
+   用法看 watchlist.html 裡「貓與龍」的範例，複製那一塊 COPY 區間即可。
+   ========================================= */
+.watchlist-review .review-label {
+  display: inline-block;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--accent);
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  margin-bottom: 8px;
+}
+.watchlist-review p {
+  margin: 0 0 4px;
+  color: color-mix(in srgb, var(--text) 90%, var(--muted));
+}

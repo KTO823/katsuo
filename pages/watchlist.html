@@ -1259,14 +1259,33 @@
                 <span class="watchlist-year">2023/3</span>
               </div>
             </article>
+            <!-- ============================================
+                 心得下拉 測試範例：貓與龍
+                 用法：
+                 1. 想幫某部作品加心得，就把它的 <div class="watchlist-row">...</div>
+                    整段換成下面 COPY START ~ COPY END 之間的內容。
+                 2. <h3> 跟 <span class="watchlist-year"> 裡的文字換成該作品原本的標題／年份。
+                 3. 心得文字寫在 <div class="watchlist-sub watchlist-review"> 裡面的
+                    <p>・...</p> 那幾行，想寫幾段就加幾個 <p>。
+                 4. 沒有心得的作品完全不用動，維持原本簡單的一行就好。
+                 ============================================ -->
+            <!-- COPY START: watchlist-review-details -->
             <article class="card" data-title="貓與龍" data-year="2026" data-month="7">
-              <div class="watchlist-row">
-                <div>
-                  <h3>貓與龍</h3>
+              <details class="watchlist-details">
+                <summary class="watchlist-row">
+                  <div>
+                    <h3>貓與龍</h3>
+                  </div>
+                  <span class="watchlist-year">2026/7</span>
+                </summary>
+                <div class="watchlist-sub watchlist-review">
+                  <span class="review-label">心得</span>
+                  <p>・貓咪大好的世界</p>
+                  <p>・一步療癒有趣的作品，先以貓媽媽展開整篇劇情，會養育除了貓以外的生物。其中這部的主角龍，因為被貓媽媽撫養長大，從人類視角看，龍的叫聲居然是「喵喵喵」的貓語。</p>
                 </div>
-                <span class="watchlist-year">2026/7</span>
-              </div>
+              </details>
             </article>
+            <!-- COPY END: watchlist-review-details -->
             <article class="card" data-title="BLACK TORCH 闇黑燈火" data-year="2026" data-month="7">
               <div class="watchlist-row">
                 <div>
