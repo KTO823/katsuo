@@ -997,9 +997,9 @@ html {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 70% 70% at 50% 0%, rgba(255, 244, 214, .21), transparent 75%),
-    radial-gradient(ellipse 55% 55% at 15% 100%, rgba(255, 244, 214, .065), transparent 75%),
-    radial-gradient(ellipse 55% 55% at 85% 100%, rgba(255, 244, 214, .065), transparent 75%);
+    radial-gradient(ellipse 75% 75% at 50% 0%, rgba(255, 244, 214, .38), transparent 78%),
+    radial-gradient(ellipse 60% 60% at 15% 100%, rgba(255, 244, 214, .14), transparent 78%),
+    radial-gradient(ellipse 60% 60% at 85% 100%, rgba(255, 244, 214, .14), transparent 78%);
 }
 
 /* 3. 讓實際內容顯示在打光層之上，不然會被蓋住 */
@@ -1040,15 +1040,15 @@ html {
   color: #c9bfa8;
 }
 
-/* 6. 收藏格：只讓卡片邊框跟底色帶透明感（漂浮/展示櫃感），
-      照片本身維持完整清晰度，不會整體變暗看不清楚 */
+/* 6. 收藏格：卡片本體改成黑色底，跟打光形成強烈對比，
+      照片本身用純白底 + 完整不透明，不會被卡片變暗影響 */
 .page-collections .square {
-  background: rgba(58, 52, 44, .55);
-  border-color: rgba(201, 191, 168, .3);
-  transition: background .2s ease, transform .15s ease, box-shadow .15s ease;
+  background: #0d0c0a;
+  border-color: rgba(201, 191, 168, .35);
+  transition: border-color .2s ease, transform .15s ease, box-shadow .15s ease;
 }
 .page-collections .square:hover {
-  background: rgba(58, 52, 44, .85); /* 滑鼠移過去時卡片變實一點，方便看清楚 */
+  border-color: rgba(201, 191, 168, .6);
 }
 .page-collections .square .img {
   background: #fff; /* 照片底色維持亮白，確保拍立得本身清楚好辨識 */
