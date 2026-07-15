@@ -997,9 +997,9 @@ html {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 55% 40% at 50% 0%, rgba(255, 244, 214, .21), transparent 65%),
-    radial-gradient(ellipse 45% 35% at 15% 100%, rgba(255, 244, 214, .065), transparent 70%),
-    radial-gradient(ellipse 45% 35% at 85% 100%, rgba(255, 244, 214, .065), transparent 70%);
+    radial-gradient(ellipse 55% 40% at 50% 0%, rgba(255, 244, 214, .16), transparent 65%),
+    radial-gradient(ellipse 45% 35% at 15% 100%, rgba(255, 244, 214, .05), transparent 70%),
+    radial-gradient(ellipse 45% 35% at 85% 100%, rgba(255, 244, 214, .05), transparent 70%);
 }
 
 /* 3. 讓實際內容顯示在打光層之上，不然會被蓋住 */
@@ -1072,31 +1072,4 @@ html {
 .watchlist-review p {
   margin: 0 0 4px;
   color: color-mix(in srgb, var(--text) 90%, var(--muted));
-}
-
-/* =========================================
-   一般內容區塊：淡茉綠底 + 點狀紋理
-   跟原本的米白區塊交替使用，避免整頁都是同一片色塊
-   用法：在想換色的 <section class="section"> 上加一個 tone-jasmine class 即可
-   ========================================= */
-:root{
-  --bg-jasmine: #edf1e4;
-}
-
-.section.tone-jasmine{
-  position: relative;
-  background: var(--bg-jasmine);
-  overflow: hidden;
-}
-.section.tone-jasmine::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(color-mix(in srgb, var(--accent-2) 22%, transparent) 1px, transparent 1px);
-  background-size: 14px 14px;
-  pointer-events: none;
-}
-.section.tone-jasmine > .container{
-  position: relative;
-  z-index: 1;
 }
