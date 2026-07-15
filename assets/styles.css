@@ -1051,7 +1051,7 @@ html {
   border-color: rgba(201, 191, 168, .6);
 }
 .page-collections .square .img {
-  background: #fff; /* 照片底色維持亮白，確保拍立得本身清楚好辨識 */
+  background: #0d0c0a; /* 照片四周的留白區域改成黑色，跟卡片融為一體 */
 }
 .page-collections .square .cap {
   color: #c9bfa8;
