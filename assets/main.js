@@ -127,7 +127,63 @@
     sortBy('year-desc');
   }
 
-  // === [新增] 彈窗（Modal）控制邏輯 ===
+  // Character list sorting (client-only): groups by script (Han / Kana / Latin),
+  // then sorts by stroke/kana/alphabet order within each group, ascending or descending.
+  const charList = document.querySelector('[data-character-list]');
+  const charSort = document.querySelector('[data-character-sort]');
+  if (charList && charSort) {
+    const rows = Array.from(charList.querySelectorAll('.char-row-details'));
+
+    const strokeCollator = new Intl.Collator('zh-Hant-u-co-stroke', { numeric: true, sensitivity: 'base' });
+    const kanaCollator = new Intl.Collator('ja', { numeric: true, sensitivity: 'base' });
+    const latinCollator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
+
+    // 依名字第一個字判斷語言分組：0 = 中文漢字, 1 = 日文假名, 2 = 英文/其他
+    function groupOf(name) {
+      const ch = Array.from(name)[0] || '';
+      const code = ch.codePointAt(0);
+      const isKana = (code >= 0x3040 && code <= 0x30ff) || (code >= 0xff66 && code <= 0xff9f);
+      if (isKana) return 1;
+      const isHan = (code >= 0x4e00 && code <= 0x9fff) || (code >= 0x3400 && code <= 0x4dbf);
+      if (isHan) return 0;
+      return 2;
+    }
+
+    function collatorFor(group) {
+      if (group === 0) return strokeCollator;
+      if (group === 1) return kanaCollator;
+      return latinCollator;
+    }
+
+    function render(order) {
+      const frag = document.createDocumentFragment();
+      order.forEach((el) => frag.appendChild(el));
+      charList.appendChild(frag);
+    }
+
+    function sortByGroup(direction) {
+      const dir = direction === 'desc' ? -1 : 1;
+      const next = rows.slice();
+      next.sort((a, b) => {
+        const nameA = a.getAttribute('data-name') || '';
+        const nameB = b.getAttribute('data-name') || '';
+        const groupA = groupOf(nameA);
+        const groupB = groupOf(nameB);
+        if (groupA !== groupB) return (groupA - groupB) * dir;
+        return collatorFor(groupA).compare(nameA, nameB) * dir;
+      });
+      render(next);
+    }
+
+    charSort.addEventListener('change', (e) => {
+      sortByGroup(e.target.value === 'group-desc' ? 'desc' : 'asc');
+    });
+
+    charSort.value = 'group-asc';
+    sortByGroup('asc'); // 頁面載入時預設套用「筆畫少 → 多」排序
+  }
+
+
   const openButtons = document.querySelectorAll('[data-modal-target]');
   const closeButtons = document.querySelectorAll('.modal-close-btn');
   const overlays = document.querySelectorAll('.modal-overlay');

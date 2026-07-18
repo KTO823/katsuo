@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>卡戳｜喜愛角色</title>
+    <meta name="description" content="喜歡的角色與人物：動畫角色、Vtuber、真人。" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <!-- 社群分享預覽設定 -->
+    <meta property="og:title" content="卡戳｜名片" />
+    <meta property="og:description" content="歡迎來到我的個人網站，這裡紀錄了我的創作、觀看過的動畫與收藏。" />
+    <meta property="og:url" content="https://kto823.github.io/katsuo/" />
+    <meta property="og:image" content="https://kto823.github.io/katsuo/assets/share.png" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html" aria-label="回到首頁">
+          <span class="mark">KTO</span>
+          <span>卡戳</span>
+        </a>
+
+        <nav class="nav" aria-label="主要導覽">
+          <a data-nav href="../index.html">首頁</a>
+          <a data-nav href="./portfolio.html">作品集</a>
+          <a data-nav href="./watchlist.html">觀影紀錄</a>
+          <a data-nav href="./characters.html">喜愛角色</a>
+          <a data-nav href="./collections.html">愛好收藏</a>
+        </nav>
+
+        <button
+          class="menu-btn"
+          type="button"
+          aria-label="開啟選單"
+          aria-expanded="false"
+          data-menu-btn
+        >
+          <span class="menu-icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-panel" data-mobile-panel data-open="false" aria-label="手機選單">
+      <div class="container">
+        <nav class="mobile-nav" aria-label="主要導覽（手機）">
+          <a data-nav href="../index.html">首頁</a>
+          <a data-nav href="./portfolio.html">作品集</a>
+          <a data-nav href="./watchlist.html">觀影紀錄</a>
+          <a data-nav href="./characters.html">喜愛角色</a>
+          <a data-nav href="./collections.html">愛好收藏</a>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <p class="kicker">Characters</p>
+          <h1 style="margin-top:0;">喜愛角色</h1>
+          <p class="lead" style="margin-bottom:0;">
+            紀錄喜歡的角色與人物，動畫角色、Vtuber、真人都有。
+          </p>
+          <p class="meta" style="margin-top:12px; margin-bottom:0;">
+            點擊每一列可展開查看完整介紹；其他角色監修中！
+          </p>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="divider"></div>
+      </div>
+
+      <section class="section">
+        <div class="container">
+          <div class="sort-bar" aria-label="排序工具列">
+            <label class="sort-label" for="character-sort">排序</label>
+            <select id="character-sort" class="sort-select" data-character-sort>
+              <option value="group-asc" selected>筆畫（少 → 多）</option>
+              <option value="group-desc">筆畫（多 → 少）</option>
+            </select>
+          </div>
+
+          <!-- 回到置頂按鈕 -->
+          <button id="backToTop" class="back-to-top" title="回到頂部">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+          </button>
+
+          <div class="char-list" aria-label="角色清單" data-character-list>
+
+            <!-- ============================================
+                 測試範例：緋八マナ
+                 用法：
+                 1. 新增角色時，複製下面 COPY START ~ COPY END 之間整段貼上。
+                 2. data-name：角色名字（用來判斷排序分組跟排序依據，務必填寫）。
+                 3. 頭像圖／全身圖各自換成自己的圖片路徑：
+                    - .char-avatar img：裁切過的頭像（收合列表顯示用）
+                    - .char-full img：完整全身圖（展開後顯示用）
+                 4. 分類標籤（動畫角色／Vtuber／真人）跟出處，換成該角色的實際內容。
+                 5. 心得寫在 .char-desc 裡面，想寫幾段就加幾個 <p>。
+                 ============================================ -->
+            <!-- COPY START: character-row -->
+            <details class="char-row-details" data-name="緋八マナ">
+              <summary class="char-row">
+                <div class="char-avatar">
+                  <img src="../assets/使用圖片/推し/緋八マナ.jpeg" alt="緋八マナ" />
+                </div>
+                <div class="char-row-info">
+                  <div class="char-row-name">緋八マナ</div>
+                  <div class="char-row-tag">Vtuber</div>
+                </div>
+                <span class="char-row-chevron" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="char-detail">
+                <div class="char-full">
+                  <img src="../assets/使用圖片/角色圖像/緋八マナ全身絵.jpeg" alt="緋八マナ" />
+                </div>
+                <div class="char-desc">
+                  <div class="char-desc-meta">出處：にじさんじ｜分類：Vtuber</div>
+                  <p>・唱歌好聽、美感佳、風趣、感性</p>
+                  <p>・直播內容以遊戲、朝活為主，偶爾歌回</p>
+                  <p>・歌曲：《パッチワーク・ヒーロー》、《ヤキツキ》、《永遠をめぐる翼》</p>
+                </div>
+              </div>
+            </details>
+            <!-- COPY END: character-row -->
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p class="footer-title">Copyright</p>
+          <div class="footer-links">
+            <span>© 2026 卡戳. All rights reserved.</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-title">Quick links</p>
+          <div class="footer-links">
+            <a href="../index.html">首頁</a>
+            <a href="./portfolio.html">作品集</a>
+            <a href="./watchlist.html">觀影紀錄</a>
+            <a href="./characters.html">喜愛角色</a>
+            <a href="./collections.html">愛好收藏</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-title">Contact</p>
+          <div class="footer-links">
+            <a href="mailto:kto823823@gmail.com">kto823823@gmail.com</a>
+            <span>座右銘：保持好奇，保持簡單。</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/main.js" defer></script>
+  </body>
+</html>

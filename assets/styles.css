@@ -1077,29 +1077,105 @@ html {
   color: color-mix(in srgb, var(--text) 90%, var(--muted));
 }
 
+
 /* =========================================
-   一般內容區塊：淡茉綠底 + 點狀紋理
-   跟原本的米白區塊交替使用，避免整頁都是同一片色塊
-   用法：在想換色的 <section class="section"> 上加一個 tone-jasmine class 即可
+   喜愛角色頁：列表 + 下拉展開
+   收合時顯示圓形頭像小圖，展開後顯示完整全身圖 + 心得
    ========================================= */
-:root{
-  --bg-jasmine: #edf1e4;
+.char-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:18px;
 }
 
-.section.tone-jasmine{
-  position: relative;
-  background: var(--bg-jasmine);
-  overflow: hidden;
+.char-row-details{
+  background: var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
 }
-.section.tone-jasmine::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(color-mix(in srgb, var(--accent-2) 22%, transparent) 1px, transparent 1px);
-  background-size: 14px 14px;
-  pointer-events: none;
+
+.char-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 16px;
+  cursor:pointer;
+  list-style:none;
 }
-.section.tone-jasmine > .container{
-  position: relative;
-  z-index: 1;
+.char-row::-webkit-details-marker{ display:none; }
+
+.char-avatar{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  overflow:hidden;
+  flex-shrink:0;
+  background: color-mix(in srgb, var(--accent) 12%, var(--paper));
+}
+.char-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.char-row-info{ flex:1; min-width:0; }
+.char-row-name{
+  font-size:14.5px;
+  font-weight:600;
+}
+.char-row-tag{
+  font-size:11.5px;
+  color: var(--accent);
+  margin-top:2px;
+}
+
+.char-row-chevron{
+  color: var(--muted);
+  transition: transform .2s ease;
+  flex-shrink:0;
+}
+.char-row-details[open] .char-row-chevron{
+  transform: rotate(180deg);
+}
+
+.char-detail{
+  display:flex;
+  gap:16px;
+  padding:0 16px 16px;
+  border-top:1px solid var(--border);
+  margin-top:2px;
+  padding-top:14px;
+}
+
+.char-full{
+  width:120px;
+  flex-shrink:0;
+  border-radius:10px;
+  overflow:hidden;
+  background: color-mix(in srgb, var(--accent) 8%, var(--paper));
+}
+.char-full img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+}
+
+.char-desc-meta{
+  font-size:12px;
+  color: var(--accent);
+  margin-bottom:8px;
+}
+.char-desc p{
+  margin:0 0 4px;
+  font-size:13.5px;
+  color: var(--muted);
+  line-height:1.6;
+}
+
+@media (max-width: 640px){
+  .char-full{ width:90px; }
+  .char-row-name{ font-size:14px; }
 }
