@@ -1142,6 +1142,7 @@ html {
 
 .char-detail{
   display:flex;
+  align-items:flex-start;   /* 加這行：圖片容器不跟著文字被拉高 */
   gap:16px;
   padding:0 16px 16px;
   border-top:1px solid var(--border);
