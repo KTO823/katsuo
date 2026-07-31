@@ -1177,15 +1177,23 @@ html {
   color: #fff;
 }
 
-.char-toolbar{
+.toolbar{
   display:flex;
   flex-wrap:wrap;
   align-items:center;
-  justify-content:space-between;
-  gap:14px;
+  justify-content:flex-start;
+  gap:24px;              /* 加大間距，原本 14px 改成 24px */
   margin-top:18px;
+  row-gap:14px;           /* 手機版換行時，上下間距不用那麼大 */
 }
-.char-toolbar .char-filter-bar,
-.char-toolbar .sort-bar{
-  margin-top:0; /* 原本各自的 margin-top 交給外層 wrapper 統一控制就好 */
+.toolbar .sort-bar{
+  margin-left:auto;       /* 排序選單自動被推到最右邊，跟篩選標籤保持距離 */
+}
+.toolbar .char-filter-bar{
+  margin-top:0;
+}
+.toolbar .sort-bar{
+  margin-top:0;
+  width:auto;
+  flex: 0 1 auto;
 }
