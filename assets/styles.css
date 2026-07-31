@@ -1079,8 +1079,7 @@ html {
 
 
 /* =========================================
-   喜愛角色頁：列表 + 下拉展開
-   收合時顯示圓形頭像小圖，展開後顯示完整全身圖 + 心得
+   角色收藏頁：列表 + 下拉展開（純文字，不放圖片）
    ========================================= */
 .char-list{
   display:flex;
@@ -1100,25 +1099,11 @@ html {
   display:flex;
   align-items:center;
   gap:12px;
-  padding:10px 16px;
+  padding:14px 16px;
   cursor:pointer;
   list-style:none;
 }
 .char-row::-webkit-details-marker{ display:none; }
-
-.char-avatar{
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  overflow:hidden;
-  flex-shrink:0;
-  background: color-mix(in srgb, var(--accent) 12%, var(--paper));
-}
-.char-avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
 
 .char-row-info{ flex:1; min-width:0; }
 .char-row-name{
@@ -1141,27 +1126,10 @@ html {
 }
 
 .char-detail{
-  display:flex;
-  align-items:flex-start;   /* 加這行：圖片容器不跟著文字被拉高 */
-  gap:16px;
   padding:0 16px 16px;
   border-top:1px solid var(--border);
   margin-top:2px;
   padding-top:14px;
-}
-
-.char-full{
-  width:120px;
-  flex-shrink:0;
-  border-radius:10px;
-  overflow:hidden;
-  background: color-mix(in srgb, var(--accent) 8%, var(--paper));
-}
-.char-full img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
 }
 
 .char-desc-meta{
@@ -1177,6 +1145,47 @@ html {
 }
 
 @media (max-width: 640px){
-  .char-full{ width:90px; }
   .char-row-name{ font-size:14px; }
+}
+
+/* =========================================
+   角色收藏頁：分類篩選標籤列
+   ========================================= */
+.char-filter-bar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+.char-filter-btn{
+  font-family: inherit;
+  font-size:13px;
+  padding:6px 16px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background: var(--paper);
+  color: var(--muted);
+  cursor:pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.char-filter-btn:hover{
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+.char-filter-btn.is-active{
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.char-toolbar{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-top:18px;
+}
+.char-toolbar .char-filter-bar,
+.char-toolbar .sort-bar{
+  margin-top:0; /* 原本各自的 margin-top 交給外層 wrapper 統一控制就好 */
 }

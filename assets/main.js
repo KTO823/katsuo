@@ -181,6 +181,24 @@
 
     charSort.value = 'group-asc';
     sortByGroup('asc'); // 頁面載入時預設套用「筆畫少 → 多」排序
+
+    // 分類篩選：只切換顯示/隱藏，不影響排序後的順序
+    const filterBar = document.querySelector('[data-character-filter]');
+    if (filterBar) {
+      const filterBtns = Array.from(filterBar.querySelectorAll('.char-filter-btn'));
+      filterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach((b) => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          const filter = btn.getAttribute('data-filter');
+          rows.forEach((row) => {
+            const category = row.getAttribute('data-category') || '';
+            const match = filter === 'all' || category === filter;
+            row.style.display = match ? '' : 'none';
+          });
+        });
+      });
+    }
   }
 
 
