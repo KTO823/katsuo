@@ -11,15 +11,6 @@
     <meta property="og:description" content="歡迎來到我的個人網站，這裡紀錄了我的創作、觀看過的動畫與收藏。" />
     <meta property="og:url" content="https://kto823.github.io/katsuo/" />
     <meta property="og:image" content="https://kto823.github.io/katsuo/assets/share.png" />
-  
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-422FHYRJVC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-422FHYRJVC');
-    </script>
   </head>
   <body>
     <header class="site-header">
@@ -72,10 +63,19 @@
             <p class="kicker">Personal</p>
             <h1>你好，我是卡戳。</h1>
             <p class="lead">
-              可以叫我卡戳、カツオ、KTO！
+              也可以叫我カツオ、KTO
             </p>
             <p class="lead">
-              可以從這裡瞭解我的「興趣愛好」及「喜愛的作品」～
+              是個 INFJ
+              <button
+                type="button"
+                class="mbti-info-btn"
+                data-modal-target="modal-mbti"
+                aria-label="什麼是INFJ？"
+              >?</button>
+            </p>
+            <p class="lead">
+              歡迎看看其他分頁
             </p>
           </div>
 
@@ -89,6 +89,36 @@
           </div>
         </div>
       </section>
+
+      <div id="modal-mbti" class="modal-overlay" aria-hidden="true">
+        <div class="modal-window" style="width: min(640px, calc(100% - 32px));">
+          <div class="modal-header">
+            <h2 style="margin:0; font-size: 20px; font-weight: 700; color: var(--text);">什麼是 INFJ？</h2>
+            <button class="modal-close-btn" type="button" aria-label="關閉彈窗">✕</button>
+          </div>
+          <div class="modal-body" style="padding: 10px 0;">
+            <p style="margin: 0 0 14px 0; font-size: 15px; color: var(--muted);">
+              INFJ 是 MBTI（16 型人格測驗）裡的一種類型，常被稱為「提倡者」。
+            </p>
+            <p style="margin: 0 0 14px 0; font-size: 15px;">
+              特質大致是：內向、重視直覺與價值觀、對人有同理心，但同時也需要獨處充電的時間。是 16 型人格裡比例較少的一型。
+            </p>
+            <div class="video-embed" style="margin: 0 0 14px 0;">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/4wbMWNCXVdg"
+                title="維思維介紹INFJ的影片，個人覺得90％以上都符合我"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p style="margin: 0; font-size: 13px; color: var(--muted);">
+              補充：MBTI 是一種流行的自我認識參考工具，不是嚴謹的心理學診斷，看看就好～
+            </p>
+          </div>
+        </div>
+      </div>
+
 
       <div class="container">
         <div class="divider"></div>

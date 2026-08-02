@@ -1177,23 +1177,48 @@ html {
   color: #fff;
 }
 
-.toolbar{
-  display:flex;
-  flex-wrap:wrap;
+/* =========================================
+   首頁：MBTI 小問號按鈕，點擊開啟說明彈窗
+   ========================================= */
+.mbti-info-btn{
+  display:inline-flex;
   align-items:center;
-  justify-content:flex-start;
-  gap:24px;              /* 加大間距，原本 14px 改成 24px */
-  margin-top:18px;
-  row-gap:14px;           /* 手機版換行時，上下間距不用那麼大 */
+  justify-content:center;
+  width:20px;
+  height:20px;
+  margin-left:6px;
+  border-radius:50%;
+  border:1px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--paper));
+  color: var(--accent);
+  font-size:12px;
+  font-weight:700;
+  line-height:1;
+  cursor:pointer;
+  vertical-align:middle;
+  transition: background .15s ease, transform .1s ease;
 }
-.toolbar .sort-bar{
-  margin-left:auto;       /* 排序選單自動被推到最右邊，跟篩選標籤保持距離 */
+.mbti-info-btn:hover{
+  background: var(--accent);
+  color:#fff;
+  transform: scale(1.08);
 }
-.toolbar .char-filter-bar{
-  margin-top:0;
+
+/* =========================================
+   彈窗內嵌 YouTube 影片：16:9 響應式容器
+   ========================================= */
+.video-embed{
+  position:relative;
+  width:100%;
+  aspect-ratio: 16 / 9;
+  border-radius:12px;
+  overflow:hidden;
+  background:#000;
 }
-.toolbar .sort-bar{
-  margin-top:0;
-  width:auto;
-  flex: 0 1 auto;
+.video-embed iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
 }
