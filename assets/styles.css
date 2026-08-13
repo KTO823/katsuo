@@ -433,11 +433,18 @@ h1{
 .list{margin-top:12px; display:grid; gap:10px}
 .row{
   display:grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items:center;
   gap:12px;
 }
-.row > span:first-child{
+.dot{
+  width:6px; height:6px;
+  border-radius:999px;
+  background: var(--text);
+  flex: 0 0 auto;
+  margin-right:10px;
+}
+.row > span:nth-child(2){
   min-width:0;
 }
 .timeline{display:grid; gap:10px}
@@ -479,6 +486,26 @@ h1{
   justify-content:space-between;
   gap:10px;
   flex-wrap:wrap;
+}
+.oshi-description{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.oshi-description p{
+  position:relative;
+  margin:0;
+  padding-left:14px;
+}
+.oshi-description p::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0.6em;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background: var(--text);
 }
 
 .btn.small{
@@ -1223,43 +1250,27 @@ html {
 }
 
 /* =========================================
-   統一點點樣式：Anime / 推し / 最近更新 共用
+   最近更新清單：點的樣式跟 Anime / 推し 統一
+   （結構維持原本的 <ul><li>，只覆蓋外觀）
    ========================================= */
-.dot-list{
+.update-section ul{
   list-style:none;
   margin:0;
   padding:0;
-  display:flex;
-  flex-direction:column;
+  display:grid;
   gap:8px;
 }
-.dot-list > li{
+.update-section li{
   position:relative;
-  padding-left:16px;
-  color: var(--text);
-  margin:0;
+  padding-left:14px;
 }
-.dot-list > li::before{
+.update-section li::before{
   content:"";
   position:absolute;
-  left:2px;
+  left:0;
   top:0.6em;
   width:6px;
   height:6px;
   border-radius:50%;
-  background: currentColor;
-}
-
-/* Anime 清單的 li 需要維持左右兩欄排版（標題 + 本季標籤） */
-.dot-list.list > li.row{
-  display:grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items:center;
-  gap:12px;
-  padding-top:2px;
-  padding-bottom:2px;
-}
-.dot-list.list > li.row::before{
-  top:50%;
-  transform: translateY(-50%);
+  background: var(--text);
 }
