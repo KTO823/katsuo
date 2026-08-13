@@ -433,18 +433,11 @@ h1{
 .list{margin-top:12px; display:grid; gap:10px}
 .row{
   display:grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items:center;
   gap:12px;
 }
-.dot{
-  width:8px; height:8px;
-  border-radius:999px;
-  background: color-mix(in srgb, var(--accent) 55%, var(--paper));
-  flex: 0 0 auto;
-  margin-right:10px;
-}
-.row > span:nth-child(2){
+.row > span:first-child{
   min-width:0;
 }
 .timeline{display:grid; gap:10px}
@@ -487,14 +480,7 @@ h1{
   gap:10px;
   flex-wrap:wrap;
 }
-.oshi-description{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-.oshi-description p{
-  margin:0;
-}
+
 .btn.small{
   padding:8px 12px;
   font-size:13px;
@@ -1222,21 +1208,58 @@ html {
   height:100%;
   border:0;
 }
-.toolbar{
+
+/* =========================================
+   首頁 hero 文字：行距收緊，跟推し卡片一致
+   ========================================= */
+.hero-lead-group{
   display:flex;
-  flex-wrap:wrap;
+  flex-direction:column;
+  gap:6px;
+  margin-bottom:18px;
+}
+.hero-lead-group .lead{
+  margin:0;
+}
+
+/* =========================================
+   統一點點樣式：Anime / 推し / 最近更新 共用
+   ========================================= */
+.dot-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.dot-list > li{
+  position:relative;
+  padding-left:16px;
+  color: var(--text);
+  margin:0;
+}
+.dot-list > li::before{
+  content:"";
+  position:absolute;
+  left:2px;
+  top:0.6em;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background: currentColor;
+}
+
+/* Anime 清單的 li 需要維持左右兩欄排版（標題 + 本季標籤） */
+.dot-list.list > li.row{
+  display:grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items:center;
-  justify-content:flex-start;
-  gap:24px;
-  margin-top:18px;
-  row-gap:14px;
+  gap:12px;
+  padding-top:2px;
+  padding-bottom:2px;
 }
-.toolbar .char-filter-bar{
-  margin-top:0;
-}
-.toolbar .sort-bar{
-  margin-top:0;
-  width:auto;
-  flex: 0 1 auto;
-  margin-left:auto;
+.dot-list.list > li.row::before{
+  top:50%;
+  transform: translateY(-50%);
 }

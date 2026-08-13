@@ -62,21 +62,19 @@
           <div>
             <p class="kicker">Personal</p>
             <h1>你好，我是卡戳。</h1>
-            <p class="lead">
-              也可以叫我カツオ、KTO
-            </p>
-            <p class="lead">
-              是個 INFJ
-              <button
-                type="button"
-                class="mbti-info-btn"
-                data-modal-target="modal-mbti"
-                aria-label="什麼是INFJ？"
-              >?</button>
-            </p>
-            <p class="lead">
-              歡迎看看其他分頁
-            </p>
+            <div class="hero-lead-group">
+              <p class="lead">也可以叫我カツオ、KTO</p>
+              <p class="lead">
+                是個 INFJ
+                <button
+                  type="button"
+                  class="mbti-info-btn"
+                  data-modal-target="modal-mbti"
+                  aria-label="什麼是INFJ？"
+                >?</button>
+              </p>
+              <p class="lead">歡迎看看其他分頁</p>
+            </div>
           </div>
 
           <div class="avatar-wrap">
@@ -116,7 +114,7 @@
               ></iframe>
             </div>
             <p style="margin: 0 0 14px 0; font-size: 15px;">
-              ↓維思維的關於INFJ其他介紹
+              ↓維思維關於INFJ其他介紹的影片
             </p>
             <div class="video-embed" style="margin: 0 0 14px 0;">
               <iframe
@@ -238,25 +236,22 @@
                 <p class="hint">目前在追</p>
               </div>
 
-              <div class="list" aria-label="在追的動畫列表">
+              <ul class="list dot-list" aria-label="在追的動畫列表">
                 <!-- COPY START: anime-row -->
-                <div class="row">
-                  <span class="dot" aria-hidden="true"></span>
+                <li class="row">
                   <span>貓與龍</span>
                   <span class="meta">本季</span>
-                </div>
+                </li>
                 <!-- COPY END: anime-row -->
-                <div class="row">
-                  <span class="dot" aria-hidden="true"></span>
+                <li class="row">
                   <span>BLACK TORCH 闇黑燈火</span>
                   <span class="meta">本季</span>
-                </div>
-                <div class="row">
-                  <span class="dot" aria-hidden="true"></span>
+                </li>
+                <li class="row">
                   <span>尼古喵喵</span>
                   <span class="meta">本季</span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </section>
 
             <section class="card oshi-card">
@@ -275,12 +270,11 @@
                     <a class="btn small" href="https://www.youtube.com/@HibachiMana" target="_blank" rel="noreferrer">YouTube頻道</a>
                   </div>
                 </div>
-                <div class="oshi-description">
-                  <p>・Vtuber，2023年出道</p>
-                  <p>・唱歌好聽、美感佳、風趣、感性</p>
-                  <p>・直播內容以遊戲、朝活為主，偶爾歌回</p>
-                  <p>p.s. 我是直播、切片勢，不太關注推特，對YT以外的消息不太了解。</p>
-                </div>
+                <ul class="oshi-description dot-list">
+                  <li>Vtuber，2023年出道</li>
+                  <li>唱歌好聽、美感佳、風趣、感性</li>
+                  <li>直播內容以遊戲、朝活為主，偶爾歌回</li>
+                </ul>
               </div>
             </section>
           </div>
@@ -292,7 +286,7 @@
           <h2>最近更新</h2>
           <div class="card">
             <div class="update-section">
-              <ul>
+              <ul class="dot-list">
                 <li>2026-07-18 增新喜愛角色頁面、更新動畫清單</li>
                 <li>2026-07-10 觀影紀錄：更新看過的動畫</li>
                 <li>2026-05-27 愛好收藏：手機版排版優化、新增收藏品</li>
